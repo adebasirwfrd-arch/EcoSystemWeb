@@ -298,8 +298,29 @@
     "title": "Tingkat Lanjut",
     "subtitle": "Buku Besar Audit",
     "badge": "Arsitektur Non-Repudiasi Presisi",
+    "cyberSentinel": "Cyber Sentinel",
+    "defensiveInfrastructure": "Infrastruktur Defensif.",
+    "securityDesc": "Orkestrasi keamanan Tier-4 yang memastikan kedaulatan data absolut dan kepatuhan regulasi.",
     "nominal": "SISTEM NOMINAL",
     "latency": "LATENSI 12MS",
+    "features": {
+      "rbac": {
+        "title": "RBAC Tingkat Lanjut",
+        "desc": "Kontrol akses granular untuk Admin, Spesialis, dan Auditor."
+      },
+      "rls": {
+        "title": "Row-Level Security",
+        "desc": "Isolasi tingkat database untuk integritas data multi-tenant."
+      },
+      "tls": {
+        "title": "Hibrida TLS 1.3",
+        "desc": "Enkripsi ujung-ke-ujung untuk semua telemetri dan aliran dokumen."
+      },
+      "audit": {
+        "title": "Audit yang Tidak Dapat Diubah",
+        "desc": "Log transaksi non-repudiasi untuk semua tindakan administratif."
+      }
+    },
     "table": {
       "time": "Event Horizon",
       "protocol": "Protokol Audit",

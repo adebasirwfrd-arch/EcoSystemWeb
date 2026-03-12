@@ -298,8 +298,29 @@
     "title": "Advanced",
     "subtitle": "Audit Ledger",
     "badge": "Precision Non-Repudiation Architecture",
+    "cyberSentinel": "Cyber Sentinel",
+    "defensiveInfrastructure": "Defensive Infrastructure.",
+    "securityDesc": "Tier-4 security orchestration ensuring absolute data sovereignty and regulatory compliance.",
     "nominal": "SYSTEMS NOMINAL",
     "latency": "12MS LATENCY",
+    "features": {
+      "rbac": {
+        "title": "Advanced RBAC",
+        "desc": "Granular access controls for Admins, Specialists, and Auditors."
+      },
+      "rls": {
+        "title": "Row-Level Security",
+        "desc": "Database-level isolation for multi-tenant data integrity."
+      },
+      "tls": {
+        "title": "TLS 1.3 Hybrid",
+        "desc": "End-to-end encryption for all telemetry and document streams."
+      },
+      "audit": {
+        "title": "Immutable Audit",
+        "desc": "Non-repudiable transaction logs for all administrative actions."
+      }
+    },
     "table": {
       "time": "Event Horizon",
       "protocol": "Audit Protocol",

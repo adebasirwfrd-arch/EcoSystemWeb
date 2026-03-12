@@ -1595,17 +1595,17 @@ export default function LandingPage() {
       <section id="security" className="py-48 relative bg-slate-950 overflow-hidden text-center">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto mb-20 text-center reveal-on-scroll">
-            <h4 className="text-blue-500 font-black tracking-[0.5em] uppercase mb-6 text-xs italic">Cyber Sentinel</h4>
-            <h2 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter text-white leading-none mb-10">Defensive <br /><span className="text-blue-500">Infrastructure.</span></h2>
-            <p className="text-2xl text-slate-400 font-light leading-relaxed mb-12">Tier-4 security orchestration ensuring absolute data sovereignty and regulatory compliance.</p>
+            <h4 className="text-blue-500 font-black tracking-[0.5em] uppercase mb-6 text-xs italic">{t('security.cyberSentinel')}</h4>
+            <h2 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter text-white leading-none mb-10">{t('security.title')} <br /><span className="text-blue-500">{t('security.subtitle')}</span></h2>
+            <p className="text-2xl text-slate-400 font-light leading-relaxed mb-12">{t('security.securityDesc')}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32 reveal-on-scroll text-left">
             {[
-              { title: "Advanced RBAC", desc: "Granular access controls for Admins, Specialists, and Auditors.", icon: <Users className="w-5 h-5" /> },
-              { title: "Row-Level Security", desc: "Database-level isolation for multi-tenant data integrity.", icon: <ShieldAlert className="w-5 h-5" /> },
-              { title: "TLS 1.3 Hybrid", desc: "End-to-end encryption for all telemetry and document streams.", icon: <Lock className="w-5 h-5" /> },
-              { title: "Immutable Audit", desc: "Non-repudiable transaction logs for all administrative actions.", icon: <FileSearch className="w-5 h-5" /> }
+              { title: t('security.features.rbac.title'), desc: t('security.features.rbac.desc'), icon: <Users className="w-5 h-5" /> },
+              { title: t('security.features.rls.title'), desc: t('security.features.rls.desc'), icon: <ShieldAlert className="w-5 h-5" /> },
+              { title: t('security.features.tls.title'), desc: t('security.features.tls.desc'), icon: <Lock className="w-5 h-5" /> },
+              { title: t('security.features.audit.title'), desc: t('security.features.audit.desc'), icon: <FileSearch className="w-5 h-5" /> }
             ].map((s, i) => (
               <div key={i} className="p-8 rounded-[2rem] bg-white/2 border border-white/5 hover:border-blue-500/30 transition-all group">
                 <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-6 group-hover:scale-110 transition-transform">
