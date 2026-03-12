@@ -1,0 +1,454 @@
+{
+  "nav": {
+    "dashboard": "DASBOR",
+    "compliance": "KEPATUHAN",
+    "amdal": "AMDAL",
+    "ghg": "GHG",
+    "wastewater": "AIR LIMBAH",
+    "waste": "LIMBAH B3",
+    "iso": "ISO 14001",
+    "proper": "PROPER",
+    "login": "MASUK",
+    "getStarted": "MULAI SEKARANG",
+    "platform": "Platform",
+    "features": "Fitur",
+    "architecture": "Arsitektur",
+    "security": "Keamanan",
+    "demo": "Demo Langsung"
+  },
+  "features": {
+    "properScoring": {
+      "title": "Skor PROPER",
+      "desc": "Prediksi peringkat otomatis berdasarkan algoritma regulasi real-time."
+    },
+    "brevoAlerts": {
+      "title": "Peringatan Brevo",
+      "desc": "Pengingat email otomatis untuk tanggal RKL-RPL dan tenggat waktu manifes."
+    },
+    "complianceAgenda": {
+      "title": "Agenda Kepatuhan",
+      "desc": "Integrasi kalender interaktif untuk semua tonggak sejarah lingkungan."
+    },
+    "isoMapping": {
+      "title": "Pemetaan Klausul ISO",
+      "desc": "Implementasi digital dari persyaratan Klausul 6.1, 9.1, dan 10.2."
+    },
+    "digitalManifests": {
+      "title": "Manifes Digital",
+      "desc": "Siklus hidup limbah B3 90/180 hari dan sinkronisasi Festronik."
+    },
+    "griAlignment": {
+      "title": "Penyelarasan GRI 11",
+      "desc": "Mesin pengungkapan ESG standar untuk pelaporan multi-sektor."
+    },
+    "ghgAccounting": {
+      "title": "Akuntansi GHG",
+      "desc": "Pelacakan karbon Scope 1, 2, dan 3 lengkap dengan faktor bawaan."
+    },
+    "iotTelemetry": {
+      "title": "Telemetri IoT",
+      "desc": "Integrasi SPARING/KLHK langsung untuk sensor air dan udara."
+    }
+  },
+  "hero": {
+    "badge": "Era Baru OS Industri",
+    "title": "HAPUSKAN",
+    "subtitle": "KOMPLEKSITAS.",
+    "desc": "Sistem operasi berperforma tinggi yang dirancang untuk kepatuhan industri berisiko tinggi. Menggabungkan kedalaman teknis dengan otomasi yang elegan secara mulus.",
+    "dashboardBadge": "INDEKS PERFORMA PERUSAHAAN",
+    "dashboardDesc": "Pusat intelijen ESG terpadu. Menyintesis telemetri real-time menjadi skor kesehatan definitif tunggal untuk OPERASI GLOBAL.",
+    "healthScore": "SKOR KESEHATAN",
+    "launch": "Luncurkan Command Center"
+  },
+  "stats": {
+    "esg": "PORTOFOLIO ESG",
+    "carbon": "JEJAK KARBON",
+    "circularity": "SIRKULARITAS",
+    "water": "KUALITAS AIR",
+    "proper": "PERINGKAT PROPER",
+    "iso": "ISO 14001:2015",
+    "amdal": "MILSTONE AMDAL",
+    "audit": "REGISTRI AUDIT",
+    "maturity": "Kematangan Awal"
+  },
+  "dashboard": {
+    "title": "Command Center",
+    "subtitle": "Performa Perusahaan",
+    "healthTitle": "Skor Dampak",
+    "realtime": "Umpan Real-time",
+    "globalSync": "Sinkronisasi Global"
+  },
+  "compliance": {
+    "title": "Kepatuhan &",
+    "subtitle": "Pelaporan Regulasi",
+    "desc": "Alur kerja pelaporan terdigitalisasi yang selaras dengan persyaratan KLHK SIMPEL.",
+    "alertBadge": "PERINGATAN KRITIS",
+    "alertMsg": "2 PENYAMPAIAN TERLAMBAT",
+    "alertAction": "SELESAIKAN SEKARANG",
+    "cards": {
+      "pending": "MENUNGGU PERSIAPAN",
+      "submitted": "TERKIRIM (DALAM TINJAUAN)",
+      "approved": "DISETUJUI OLEH INSTANSI",
+      "overdue": "DOKUMEN TERLAMBAT",
+      "doc": "DOKUMEN",
+      "docs": "DOKUMEN"
+    },
+    "charts": {
+      "vector": "VEKTOR KEPATUHAN KESELURUHAN",
+      "radar": "Visualisasi Grafik Radar",
+      "status": "STATUS PENYAMPAIAN SIMPEL",
+      "link": "TAUTAN INTEGRASI SIMPEL",
+      "api": "KONEKSI API",
+      "active": "AKTIF",
+      "lastSync": "SINKRONISASI TERAKHIR"
+    }
+  },
+  "amdal": {
+    "title": "AMDAL",
+    "subtitle": "Manajemen.",
+    "desc": "Pelacakan komprehensif untuk parameter implementasi AMDAL, RKL, dan RPL.",
+    "action": "TAMBAH PERSYARATAN",
+    "cards": {
+      "params": "PARAMETER TERLACAK",
+      "paramsSub": "RKL & RPL",
+      "rate": "TINGKAT KEPATUHAN",
+      "rateSub": "Nol Pelanggaran",
+      "tasks": "TUGAS MENDATANG",
+      "tasksSub": "Jatuh Tempo < 30 Hari",
+      "overdue": "ITEM TERLAMBAT",
+      "overdueSub": "Protokol Bersih"
+    },
+    "advisory": {
+      "title": "ADVISORY AMDAL",
+      "status": "OPERASIONAL PATUH",
+      "desc": "Semua kewajiban statuter RKL-RPL untuk semester ini telah diverifikasi dan dicatat.",
+      "nextReport": "LAPORAN BERIKUTNYA",
+      "validity": "MASA BERLAKU",
+      "remaining": "HARI TERSISA"
+    },
+    "agenda": {
+      "title": "Agenda Pemantauan"
+    }
+  },
+  "ghg": {
+    "title": "GHG",
+    "subtitle": "Akuntansi.",
+    "desc": "Pelacakan jejak karbon protokol SRN PPI / SIGN SMART.",
+    "totalEmissions": "Total Emisi",
+    "trajectory": "TRAJEKTORI KARBON",
+    "baseline": "Garis Dasar",
+    "target": "Target",
+    "projection": "PROYEKSI",
+    "reduction": {
+      "title": "STATUS REDUKSI",
+      "desc": "Saat ini berada 12,5% di bawah garis dasar historis. Sesuai target untuk Sertifikasi Tier 1."
+    },
+    "heatmap": "MATRIKS INTENSITAS KARBON 365 HARI"
+  },
+  "wastewater": {
+    "title": "Air Limbah &",
+    "subtitle": "Manajemen POPAL.",
+    "desc": "Kelola kepatuhan IPAL BMAL, log harian SPARING, dan operator tersertifikasi.",
+    "alertBadge": "PERINGATAN REGULASI",
+    "alertMsg": "TIDAK ADA OPERATOR POPAL AKTIF",
+    "trends": "TREN PARAMETER BMAL",
+    "shiftStart": "AWAL SHIFT",
+    "shiftEnd": "AKHIR SHIFT",
+    "telemetry": "ALIRAN TELEMETRI REAL-TIME",
+    "complianceScore": "Skor Kepatuhan",
+    "telemetryDesc": "Verifikasi telemetri SPARING terintegrasi mengonfirmasi kepatuhan batas ambang yang tinggi.",
+    "sparingStatus": "Status SPARING",
+    "klhkSync": "Sinkronisasi Terakhir KLHK",
+    "matrix": "Matriks Kepatuhan Sparing 365 Hari"
+  },
+  "waste": {
+    "title": "Limbah B3",
+    "subtitle": "Manajemen.",
+    "desc": "Siklus hidup manifes limbah berbahaya ujung-ke-ujung & integrasi Festronik.",
+    "action": "MANIFES BARU",
+    "category": {
+      "title": "PEMBAGIAN KATEGORI LIMBAH",
+      "clearance": "TINGKAT PENYELESAIAN",
+      "optimal": "OPTIMAL"
+    },
+    "generation": "TIMBULAN vs PENYERAHAN",
+    "genLabel": "TIMBULAN",
+    "handoverLabel": "PENYERAHAN",
+    "cycles": "24 SIKLUS TERAKHIR",
+    "timeline": "MATRIKS TIMELINE PENYIMPANAN",
+    "table": {
+      "origin": "ASAL ALIRAN LIMBAH",
+      "cat1": "KATEGORI 1",
+      "cat2": "KATEGORI 2"
+    }
+  },
+  "iso": {
+    "cards": {
+      "readiness": "Kesiapan Audit",
+      "aspects": "Aspek Signifikan",
+      "aspectsSub": "Dampak Kritis Teridentifikasi",
+      "legal": "Kepatuhan Hukum",
+      "legalSub": "Kewajiban Terverifikasi",
+      "nc": "Ketidaksesuaian",
+      "ncSub": "Nol CAPA Tertunda"
+    },
+    "matrix": "Matriks Signifikansi Aspek",
+    "probability": "Probabilitas × Keparahan",
+    "activeRisks": "RISIKO AKTIF",
+    "capa": {
+      "title": "Analitik Siklus Hidup CAPA",
+      "rootCause": "Akar Penyebab Teridentifikasi",
+      "remediation": "Remediasi Aktif",
+      "technical": "Verifikasi Teknis"
+    },
+    "vigilance": "Aliran Kewaspadaan Regulasi",
+    "liveStream": "Aliran Langsung"
+  },
+  "domestic": {
+    "title": "Limbah",
+    "subtitle": "Domestik.",
+    "desc": "Pelacakan ekonomi sirkular & metrik pemrosesan limbah non-B3.",
+    "recyclingRate": "TINGKAT DAUR ULANG",
+    "categories": {
+      "organic": "LIMBAH ORGANIK",
+      "organicSub": "Material Kompos",
+      "plastic": "PLASTIK / PET",
+      "plasticSub": "Aliran Daur Ulang",
+      "paper": "KERTAS / KARTON",
+      "paperSub": "Pusat Pemrosesan",
+      "residue": "RESIDU",
+      "residueSub": "Pembuangan Akhir"
+    },
+    "efficiency": "TIMELINE EFISIENSI SEGREGASI",
+    "target": "Target",
+    "actual": "Aktual",
+    "day": "HARI",
+    "cycle": "SIKLUS PEMANTAUAN HARIAN"
+  },
+  "proper": {
+    "maturityTracker": "Pelacak Kematangan Performa",
+    "title": "Kementerian LHK",
+    "subtitle": "PROPER 2026.",
+    "maturityScore": "Skor Kematangan",
+    "status": {
+      "startup": "MULAI",
+      "blue": "BIRU (TAAT)",
+      "green": "HIJAU",
+      "gold": "STATUS EMAS"
+    },
+    "aiInsight": "Wawasan Prediktif AI",
+    "aiStrategy": "Buku Strategi",
+    "vaultTitle": "Gudang Kepatuhan Regulasi (Taat)",
+    "vaultValidated": "TERVALIDASI v2.4",
+    "vaultItems": {
+      "ipal": "PEMANTAUAN IPAL POPAL",
+      "ipalSub": "Persyaratan Wajib Biru",
+      "air": "EMISI UDARA SIMPEL",
+      "airSub": "Integritas Data Teknis",
+      "b3": "MANIFES B3 FESTRONIK",
+      "b3Sub": "Ketertelusuran Ujung-ke-Ujung"
+    },
+    "compliant": "PATUH",
+    "trendTitle": "Tren Kepatuhan",
+    "months": "12 Bulan"
+  },
+  "intelligence": {
+    "badge": "Mesin Indeks Performa",
+    "title": "Intisari",
+    "subtitle": "ESG Tingkat Lanjut.",
+    "path": "Jalur: Net Zero 2050",
+    "indexStatus": "Status Indeks",
+    "levels": {
+      "standard": "Jalur Standar",
+      "maturity": "Kurva Kematangan",
+      "master": "Tingkat Ahli"
+    },
+    "mastery": "Penyelesaian Keahlian",
+    "initMatrix": "Inisialisasi Matriks",
+    "engine": "Mesin Konteks",
+    "active": "Pemrosesan Aktif",
+    "verifyLink": "Verifikasi Tautan Neural",
+    "placeholder1": "Target Pengambilalihan Sistem...",
+    "placeholder2": "Sinkronisasi Variabel Global..."
+  },
+  "legal": {
+    "cards": {
+      "total": "Total Regulasi",
+      "avg": "Rata-rata Implementasi",
+      "reviews": "Tinjauan Mendatang",
+      "acts": "Undang-Undang Utama"
+    },
+    "vaultTitle": "Gudang Regulasi Perusahaan",
+    "vaultSub": "Intelijen Langsung untuk Kepatuhan Industri",
+    "search": "Cari hukum atau pasal...",
+    "export": "EKSPOR BUKU BESAR KEPATUHAN",
+    "status": "STATUS"
+  },
+  "security": {
+    "stats": {
+      "rls": "Matriks RLS",
+      "rlsDesc": "Penegakan Row-Level Security global di semua 12 node tepi.",
+      "hub": "Pusat Operator",
+      "hubDesc": "Pemantauan personel real-time dan validasi sesi multi-faktor.",
+      "uptime": "99,9% Uptime",
+      "uptimeDesc": "Integritas infrastruktur Tier-4 dengan failover buku besar tanpa downtime.",
+      "quantum": "Quantum-Safe",
+      "quantumDesc": "Enkripsi hibrida TLS 1.3 untuk semua telemetri dan aliran dokumen."
+    },
+    "title": "Tingkat Lanjut",
+    "subtitle": "Buku Besar Audit",
+    "badge": "Arsitektur Non-Repudiasi Presisi",
+    "nominal": "SISTEM NOMINAL",
+    "latency": "LATENSI 12MS",
+    "table": {
+      "time": "Event Horizon",
+      "protocol": "Protokol Audit",
+      "context": "Konteks Entitas",
+      "actor": "Aktor Utama",
+      "integrity": "Integritas"
+    },
+    "statusValid": "SHA-256 VALID"
+  },
+  "modules": {
+    "integratedBadge": "EKOSISTEM TERINTEGRASI",
+    "title": "Teater",
+    "subtitle": "Modul.",
+    "amdal": {
+      "titleShort": "Manajemen AMDAL",
+      "badge": "KOMPONEN SISTEM",
+      "title": "Manajemen",
+      "subtitle": "AMDAL",
+      "desc": "Kerangka kerja pemantauan AMDAL",
+      "descLong": "Manajemen siklus hidup AMDAL yang komprehensif. Pemantauan status RKL-RPL real-time dengan siklus pelaporan semester otomatis dan mesin penasihat regulasi.",
+      "details": ["Advisory AMDAL", "Siklus RKL-RPL", "Logika Persetujuan"]
+    },
+    "wastewater": {
+      "titleShort": "Air Limbah",
+      "badge": "SISTEM MISI KRITIS",
+      "title": "Pembuangan",
+      "subtitle": "Presisi PP 22/2021",
+      "desc": "Telemetri IPAL & SPARING",
+      "descLong": "Pemantauan air limbah misi kritis yang terintegrasi dengan perangkat keras SPARING. Telemetri real-time untuk ambang batas pH, COD, dan TSS dengan pencegahan pelanggaran otomatis dan pencatatan harian.",
+      "details": ["Sinkronisasi Perangkat", "Penjaga Batas", "Audit BMAL", "Pelacak Tindakan"]
+    },
+    "ghg": {
+      "titleShort": "GHG",
+      "badge": "AKUNTANSI KARBON",
+      "title": "Akuntansi",
+      "subtitle": "Protokol SRN PPI",
+      "desc": "Akuntansi jejak karbon",
+      "descLong": "Inventarisasi Gas Rumah Kaca dan pelacakan jejak karbon berdasarkan Scope 1, 2, dan 3. Sepenuhnya patuh dengan kerangka pelaporan SIGN SMART dan SRN PPI untuk transparansi global.",
+      "details": ["Breakdown Scope", "Limit SRN PPI", "Heatmap Emisi", "Jalur Net Zero"]
+    },
+    "waste": {
+      "titleShort": "Limbah B3",
+      "badge": "EKOSISTEM DIGITAL",
+      "title": "Rantai Digital",
+      "subtitle": "Festronik",
+      "desc": "Manajemen siklus hidup Festronik",
+      "descLong": "Siklus hidup manifes limbah berbahaya ujung-ke-ujung. Integrasi Festronik yang mulus memastikan akuntabilitas 100% dari timbulan hingga pembuangan akhir dengan peringatan penyimpanan 90/180 hari.",
+      "details": ["Sinkronisasi Festronik", "Penjaga Penyimpanan", "Neraca Limbah B3", "Pelacak Manifes"]
+    },
+    "iso": {
+      "titleShort": "ISO 14001",
+      "badge": "INTI EMS",
+      "title": "ISO 14001",
+      "subtitle": "Digital EMS Core",
+      "desc": "Analitik siklus hidup EMS",
+      "descLong": "Sistem Manajemen ISO 14001:2015 yang terdigitalisasi. Pemetaan siklus hidup penuh untuk Klausul 6.1 (Aspek/Dampak), Klausul 9.1 (Pemantauan), dan Klausul 10.2 (mesin CAPA).",
+      "details": ["Matriks Klausul 6.1", "CAPA Klausul 10.2", "Kesiapan Audit", "Legalitas Digital"]
+    },
+    "proper": {
+      "titleShort": "PROPER",
+      "badge": "INTELIJEN REGULASI",
+      "title": "PROPER",
+      "subtitle": "Penskalaan Prediktif",
+      "desc": "Trajektori peringkat Kementerian",
+      "descLong": "Prakiraan peringkat PROPER KLHK dengan analisis gap berbasis AI. Dorong organisasi Anda dari kepatuhan menuju peringkat Hijau dan Emas dengan pelacakan melampaui kepatuhan.",
+      "details": ["Log Komunitas SROI", "AI Analisis Gap", "Probabilitas Peringkat", "Pemetaan Kriteria"]
+    },
+    "compliance": {
+      "titleShort": "Kepatuhan",
+      "badge": "KEPATUHAN REGULASI",
+      "title": "Mesin",
+      "subtitle": "Kepatuhan",
+      "desc": "Mesin pelacak regulasi",
+      "descLong": "Sistem pelacakan kepatuhan otomatis yang menyelaraskan kewajiban regulasi dengan status implementasi operasional.",
+      "details": ["Vektor Kepatuhan", "Integritas Data", "Status SIMPEL", "Siklus Review"]
+    },
+    "domestic": {
+      "titleShort": "Domestik",
+      "badge": "EKONOMI SIRKULAR",
+      "title": "Limbah",
+      "subtitle": "Domestik",
+      "desc": "Metrik sirkular non-B3",
+      "descLong": "Pelacakan ekonomi sirkular & metrik pemrosesan limbah non-B3 untuk efisiensi pemanfaatan kembali material.",
+      "details": ["Tingkat Daur Ulang", "Pemisahan Aliran", "Log Segregasi", "Metrik Efisiensi"]
+    },
+    "intelligence": {
+      "titleShort": "Intelijen",
+      "badge": "INTELIJEN ESG",
+      "title": "Permodelan",
+      "subtitle": "ESG Prediktif",
+      "desc": "Permodelan prediktif ESG",
+      "descLong": "Mesin intelijen ESG canggih yang menganalisis metrik pengungkapan terhadap standar global (GRI, SASB, TCFD).",
+      "details": ["Jalur Net Zero", "Kurva Kematangan", "Benchmarking AI", "Peta Jalan Strategis"]
+    },
+    "legal": {
+      "titleShort": "Legal",
+      "badge": "VAULT REGULASI",
+      "title": "Gudang",
+      "subtitle": "Regulasi Statuter",
+      "desc": "Gudang regulasi statuter",
+      "descLong": "Gudang regulasi interaktif dan pelacakan implementasi kepatuhan untuk memastikan nol pelanggaran regulasi.",
+      "details": ["Vault Regulasi", "Pelacak Mandat", "Gap Implementasi", "Legal Basis AI"]
+    },
+    "security": {
+      "titleShort": "Keamanan",
+      "badge": "LEDGER AUDIT",
+      "title": "Buku Besar",
+      "subtitle": "Audit Terenkripsi",
+      "desc": "Buku besar audit yang tidak dapat diubah",
+      "descLong": "Pencatatan audit non-repudiasi tingkat militer. Kontrol Akses berbasis Peran (RBAC) canggih memastikan integritas data tertinggi.",
+      "details": ["Multi-MFA", "Audit Trail", "Integritas Data", "Isolasi Tenant"]
+    },
+    "dashboard": {
+      "titleShort": "Dasbor",
+      "badge": "PUSAT KOMANDO",
+      "title": "Command",
+      "subtitle": "Center",
+      "desc": "Indeks performa perusahaan",
+      "descLong": "Pusat intelijen ESG terpadu. Menyintesis telemetri real-time menjadi skor kesehatan definitif tunggal untuk OPERASI GLOBAL.",
+      "details": ["Skor Dampak", "Umpan Real-time", "Sinkronisasi Global"]
+    },
+    "esg": {
+      "titleShort": "ESG",
+      "badge": "INTELIJEN ESG",
+      "title": "Permodelan",
+      "subtitle": "ESG Prediktif",
+      "desc": "Permodelan prediktif ESG",
+      "descLong": "Mesin intelijen ESG canggih yang menganalisis metrik pengungkapan terhadap standar global (GRI, SASB, TCFD).",
+      "details": ["Jalur Net Zero", "Kurva Kematangan", "Benchmarking AI"]
+    }
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "months": ["JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI", "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"],
+    "monthsShort": ["JAN", "FEB", "MAR", "APR", "MEI", "JUN", "JUL", "AGU", "SEP", "OKT", "NOV", "DES"],
+    "daysShort": ["S", "S", "R", "K", "J", "S", "M"]
+  },
+  "cta": {
+    "title": "STANDAR",
+    "subtitle": "BERIKUTNYA.",
+    "desc": "Beralih dari pemantauan lingkungan konvensional ke sistem operasi prediktif berperforma tinggi.",
+    "button": "Masuk Ke Ekosistem"
+  },
+  "footer": {
+    "tagline": "Kepatuhan Berpresisi Tinggi",
+    "allSystemsNominal": "Semua Sistem Normal",
+    "copyright": "© 2026 ADEBASIR ENTERPRISE"
+  }
+}

@@ -4,71 +4,24 @@ import Link from "next/link"
 import { useEffect, useState, useMemo } from "react"
 import { Outfit, Inter } from "next/font/google"
 import {
-  Globe2,
-  LayoutDashboard,
-  ClipboardCheck,
-  FileText,
-  Droplets,
-  Trash2,
-  BarChart3,
-  ShieldCheck,
-  Trophy,
-  Scale,
-  Lock,
-  Activity,
-  Shield,
-  Zap,
-  Target,
-  Clock,
-  Wind,
-  Layers,
-  Calendar,
-  AlertCircle,
-  Database,
-  TrendingUp,
-  RefreshCw,
-  ChevronLeft,
-  ChevronRight,
-  ArrowRight,
-  ArrowUpRight,
-  Menu,
-  X,
-  Search,
-  Settings,
-  Bell,
-  User,
-  Plus,
-  Filter,
-  Download,
-  Share2,
-  MoreVertical,
-  ExternalLink,
-  PlusCircle,
-  CheckCircle2,
-  FileSearch,
-  Send,
-  Package,
-  Users,
-  Server,
-  Cpu,
-  ShieldAlert,
-  Building2
-} from 'lucide-react';
+   ArrowRight, ArrowUpRight, CheckCircle2, ChevronRight, Globe2, LayoutDashboard, ShieldCheck, Zap, AlertCircle, Calendar, FileText, Send, TrendingUp, RefreshCw, PlusCircle, Droplets, Database, Grid3X3, Layers, Leaf, Trash2, XCircle, Trophy, BrainCircuit, Activity, BarChart3, ChevronLeft, ArrowDown, Download, Lock, MapPin, Scale, Search, Server, Shield, ShieldAlert, User, Wind, Cpu, FileSearch, Building2, Bell, ClipboardCheck, Clock, Target, Package, Users
+} from "lucide-react"
+import { useLanguage } from "@/lib/i18n"
 import "./landing-styles.css"
 
 const outfit = Outfit({ subsets: ["latin"] })
 const inter = Inter({ subsets: ["latin"] })
 
-function CommandCenterDashboard() {
+function CommandCenterDashboard({ t }: { t: (key: string) => string }) {
   const stats = [
-    { label: "ESG PORTFOLIO", value: "0%", sub: "Initial Maturity", color: "text-emerald-500", trend: "0" },
-    { label: "CARBON FOOTPRINT", value: "17.4", unit: "TCO2E", sub: "Monthly Emissions", color: "text-slate-900", trend: "17.4" },
-    { label: "CIRCULARITY", value: "1,912.5", unit: "T", sub: "Waste Stream Total", color: "text-amber-500", trend: "1912.5" },
-    { label: "WATER QUALITY", value: "7.0", unit: "PH", sub: "Monitoring Status", color: "text-blue-500", trend: "7.0" },
-    { label: "PROPER RATING", value: "GOLD", sub: "Compliance Status", color: "text-emerald-500", trend: "GOLD" },
-    { label: "ISO 14001:2015", value: "ACTIVE", sub: "EMS Certification", color: "text-blue-600", trend: "0" },
-    { label: "AMDAL MILESTONES", value: "100%", sub: "Permit Progress", color: "text-emerald-500", trend: "100" },
-    { label: "AUDIT REGISTRY", value: "CLEAR", sub: "Active Findings", color: "text-emerald-500", trend: "0" }
+    { label: t('stats.esg'), value: "0%", sub: t('stats.maturity'), color: "text-emerald-500", trend: "0" },
+    { label: t('stats.carbon'), value: "17.4", unit: "TCO2E", sub: t('ghg.totalEmissions'), color: "text-slate-900", trend: "17.4" },
+    { label: t('stats.circularity'), value: "1,912.5", unit: "T", sub: t('domestic.categories.residueSub'), color: "text-amber-500", trend: "1912.5" },
+    { label: t('stats.water'), value: "7.0", unit: "PH", sub: t('wastewater.telemetry'), color: "text-blue-500", trend: "7.0" },
+    { label: t('stats.proper'), value: "GOLD", sub: t('proper.status.gold'), color: "text-emerald-500", trend: "GOLD" },
+    { label: t('stats.iso'), value: "ACTIVE", sub: t('stats.iso'), color: "text-blue-600", trend: "0" },
+    { label: t('stats.amdal'), value: "100%", sub: t('amdal.cards.params'), color: "text-emerald-500", trend: "100" },
+    { label: t('stats.audit'), value: "CLEAR", sub: t('security.stats.rls'), color: "text-emerald-500", trend: "0" }
   ];
 
   return (
@@ -80,13 +33,13 @@ function CommandCenterDashboard() {
             <div className="relative z-10 flex flex-col lg:flex-row justify-between items-center gap-8">
               <div className="max-w-2xl">
                 <div className="inline-block px-5 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[10px] font-black text-emerald-400 uppercase tracking-[0.3em] mb-6">
-                  ENTERPRISE PERFORMANCE INDEX
+                  {t('hero.dashboardBadge')}
                 </div>
                 <h3 className="text-5xl md:text-6xl font-black text-white italic uppercase tracking-tighter mb-6 leading-[0.9]">
-                  Environmental <br /><span className="text-emerald-500">Impact Score.</span>
+                  {t('hero.title')} <br /><span className="text-emerald-500">{t('hero.subtitle')}</span>
                 </h3>
                 <p className="text-base text-slate-400 font-light leading-relaxed max-w-xl">
-                  Unified ESG intelligence hub. Synthesizing real-time telemetry into a single definitive health score for <span className="text-white font-bold tracking-tight">GLOBAL OPERATIONS</span>.
+                  {t('hero.dashboardDesc')}
                 </p>
               </div>
 
@@ -98,7 +51,7 @@ function CommandCenterDashboard() {
                 </svg>
                 <div className="absolute flex flex-col items-center">
                   <span className="text-5xl md:text-6xl font-black text-white italic">57%</span>
-                  <span className="text-[9px] font-black text-emerald-500 uppercase tracking-[0.4em] mt-2">HEALTH SCORE</span>
+                  <span className="text-[9px] font-black text-emerald-500 uppercase tracking-[0.4em] mt-2">{t('hero.healthScore')}</span>
                 </div>
               </div>
             </div>
@@ -132,12 +85,13 @@ function CommandCenterDashboard() {
 }
 
 function ComplianceDashboard() {
+  const { t } = useLanguage();
   return (
     <div className="compliance-dashboard animate-in fade-in slide-in-from-right duration-1000 w-full pt-20 pb-10">
       <div className="flex justify-between items-center mb-10">
         <div className="max-w-2xl">
-          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">Compliance & <span className="text-emerald-500">Regulatory reporting</span></h3>
-          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em]">Digitized reporting workflow precision-aligned with KLHK SIMPEL requirements.</p>
+          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">{t('compliance.title')} <span className="text-emerald-500">{t('compliance.subtitle')}</span></h3>
+          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em]">{t('compliance.desc')}</p>
         </div>
         <div className="bg-red-600/10 border border-red-500/20 rounded-2xl p-6 flex items-center gap-6 shadow-xl relative overflow-hidden">
           <div className="relative z-10 flex items-center gap-4">
@@ -145,12 +99,12 @@ function ComplianceDashboard() {
               <AlertCircle className="w-6 h-6 text-white" />
             </div>
             <div>
-              <div className="text-[10px] font-black text-red-500 uppercase tracking-[0.3em] mb-1">CRITICAL RED FLAG</div>
-              <div className="text-sm font-black text-white italic uppercase tracking-tight">2 OVERDUE SUBMISSIONS</div>
+              <div className="text-[10px] font-black text-red-500 uppercase tracking-[0.3em] mb-1">{t('compliance.alertBadge')}</div>
+              <div className="text-sm font-black text-white italic uppercase tracking-tight">{t('compliance.alertMsg')}</div>
             </div>
           </div>
           <button className="relative z-10 bg-white text-red-600 px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:bg-slate-50 transition-colors shadow-lg">
-            RESOLVE NOW
+            {t('compliance.alertAction')}
           </button>
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-red-500/20 to-transparent"></div>
         </div>
@@ -158,10 +112,10 @@ function ComplianceDashboard() {
 
       <div className="grid grid-cols-4 gap-6 mb-12">
         {[
-          { label: "PENDING PREPARATION", value: "1", status: "DOCUMENT", icon: <Calendar className="text-amber-500 w-6 h-6" />, color: "text-amber-500" },
-          { label: "SUBMITTED (IN REVIEW)", value: "1", status: "DOCUMENT", icon: <Send className="text-blue-500 w-6 h-6" />, color: "text-blue-500" },
-          { label: "APPROVED BY AGENCY", value: "1", status: "DOCUMENT", icon: <CheckCircle2 className="text-emerald-500 w-6 h-6" />, color: "text-emerald-500" },
-          { label: "OVERDUE DOCUMENTS", value: "2", status: "DOCUMENTS", icon: <AlertCircle className="text-red-500 w-6 h-6" />, color: "text-red-500" },
+          { label: t('compliance.cards.pending'), value: "1", status: t('compliance.cards.doc'), icon: <Calendar className="text-amber-500 w-6 h-6" />, color: "text-amber-500" },
+          { label: t('compliance.cards.submitted'), value: "1", status: t('compliance.cards.doc'), icon: <Send className="text-blue-500 w-6 h-6" />, color: "text-blue-500" },
+          { label: t('compliance.cards.approved'), value: "1", status: t('compliance.cards.doc'), icon: <CheckCircle2 className="text-emerald-500 w-6 h-6" />, color: "text-emerald-500" },
+          { label: t('compliance.cards.overdue'), value: "2", status: t('compliance.cards.docs'), icon: <AlertCircle className="text-red-500 w-6 h-6" />, color: "text-red-500" },
         ].map((item, idx) => (
           <div key={idx} className="bg-white border border-slate-100 rounded-[2rem] p-8 shadow-xl group hover:scale-[1.02] transition-all duration-500">
             <div className="flex justify-between items-start mb-6">
@@ -180,18 +134,18 @@ function ComplianceDashboard() {
         <div className="bg-white border border-slate-100 rounded-[3rem] p-12 shadow-xl">
           <div className="flex items-center gap-3 mb-10">
             <TrendingUp className="w-5 h-5 text-blue-500" />
-            <h4 className="text-sm font-black text-slate-900 italic uppercase tracking-wider">OVERALL COMPLIANCE VECTOR</h4>
+            <h4 className="text-sm font-black text-slate-900 italic uppercase tracking-wider">{t('compliance.charts.vector')}</h4>
           </div>
           <div className="h-48 flex items-center justify-center bg-slate-50 border border-dashed border-slate-200 rounded-3xl relative overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent"></div>
-            <p className="relative z-10 text-[10px] text-slate-400 font-black uppercase tracking-[0.3em]">Radar Chart Viz</p>
+            <p className="relative z-10 text-[10px] text-slate-400 font-black uppercase tracking-[0.3em]">{t('compliance.charts.radar')}</p>
           </div>
         </div>
 
         <div className="bg-white border border-slate-100 rounded-[3rem] p-12 shadow-xl">
           <div className="flex items-center gap-3 mb-10">
             <TrendingUp className="w-5 h-5 text-emerald-500" />
-            <h4 className="text-sm font-black text-slate-900 italic uppercase tracking-wider">SIMPEL SUBMISSION STATUS</h4>
+            <h4 className="text-sm font-black text-slate-900 italic uppercase tracking-wider">{t('compliance.charts.status')}</h4>
           </div>
           <div className="h-48 flex items-center justify-center">
             <div className="relative w-40 h-40">
@@ -210,16 +164,16 @@ function ComplianceDashboard() {
         <div className="bg-white border border-slate-100 rounded-[3rem] p-12 shadow-xl">
           <div className="flex items-center gap-3 mb-8">
             <RefreshCw className="w-5 h-5 text-blue-600" />
-            <h4 className="text-sm font-black text-slate-900 italic uppercase tracking-wider">SIMPEL INTEGRATION LINK</h4>
+            <h4 className="text-sm font-black text-slate-900 italic uppercase tracking-wider">{t('compliance.charts.link')}</h4>
           </div>
           <div className="space-y-6">
             <div className="flex items-center justify-between p-5 bg-slate-50 border border-slate-100 rounded-2xl">
-              <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">API CONNECTION</span>
-              <span className="px-3 py-1 bg-emerald-100 text-emerald-600 text-[8px] font-black rounded-lg uppercase">ACTIVE</span>
+              <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{t('compliance.charts.api')}</span>
+              <span className="px-3 py-1 bg-emerald-100 text-emerald-600 text-[8px] font-black rounded-lg uppercase">{t('compliance.charts.active')}</span>
             </div>
             <div className="flex items-center justify-between p-5 bg-slate-50 border border-slate-100 rounded-2xl">
-              <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">LAST SYNC</span>
-              <span className="text-[10px] font-black text-slate-900 uppercase">2 MINS AGO</span>
+              <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{t('compliance.charts.lastSync')}</span>
+              <span className="text-[10px] font-black text-slate-900 uppercase">2 {t('security.audit.ago.mins')}</span>
             </div>
           </div>
         </div>
@@ -228,24 +182,25 @@ function ComplianceDashboard() {
   )
 }
 function AmdalManagement() {
+  const { t } = useLanguage();
   return (
     <div className="amdal-management-container animate-in fade-in zoom-in duration-1000 w-full pt-20 pb-10">
       <div className="flex justify-between items-center mb-12">
         <div>
-          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">AMDAL <span className="text-purple-400">Management.</span></h3>
-          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-2">Comprehensive tracking for EIA, RKL, and RPL implementation parameters.</p>
+          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">{t('amdal.title')} <span className="text-purple-400">{t('amdal.subtitle')}</span></h3>
+          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-2">{t('amdal.desc')}</p>
         </div>
         <button className="bg-purple-600 text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest flex items-center gap-3 hover:bg-purple-700 transition-all shadow-xl shadow-purple-600/20">
-          <PlusCircle className="w-4 h-4" /> ADD REQUIREMENT
+          <PlusCircle className="w-4 h-4" /> {t('amdal.action')}
         </button>
       </div>
 
       <div className="grid grid-cols-4 gap-6 mb-12">
         {[
-          { label: "TRACKED PARAMETERS", val: "14", sub: "RKL & RPL", color: "text-blue-500", icon: <ShieldCheck className="w-5 h-5 text-blue-500" /> },
-          { label: "COMPLIANCE RATE", val: "100%", sub: "Zero Violations", color: "text-emerald-500", icon: <CheckCircle2 className="text-emerald-500" /> },
-          { label: "UPCOMING TASKS", val: "3", sub: "Due in < 30 Days", color: "text-amber-500", icon: <Calendar className="w-5 h-5 text-amber-500" /> },
-          { label: "OVERDUE ITEMS", val: "0", sub: "Clear Protocol", color: "text-emerald-500", icon: <AlertCircle className="w-5 h-5 text-emerald-500" /> }
+          { label: t('amdal.cards.params'), val: "14", sub: t('amdal.cards.paramsSub'), color: "text-blue-500", icon: <ShieldCheck className="w-5 h-5 text-blue-500" /> },
+          { label: t('amdal.cards.rate'), val: "100%", sub: t('amdal.cards.rateSub'), color: "text-emerald-500", icon: <CheckCircle2 className="text-emerald-500" /> },
+          { label: t('amdal.cards.tasks'), val: "3", sub: t('amdal.cards.tasksSub'), color: "text-amber-500", icon: <Calendar className="w-5 h-5 text-amber-500" /> },
+          { label: t('amdal.cards.overdue'), val: "0", sub: t('amdal.cards.overdueSub'), color: "text-emerald-500", icon: <AlertCircle className="w-5 h-5 text-emerald-500" /> }
         ].map((card, idx) => (
           <div key={idx} className="bg-white border border-slate-100 rounded-[2rem] p-8 shadow-xl group hover:scale-[1.02] transition-all duration-500">
             <div className="flex justify-between items-start mb-6">
@@ -265,23 +220,23 @@ function AmdalManagement() {
           <div className="relative z-10">
             <div className="flex items-center gap-4 mb-8">
               <ShieldCheck className="w-6 h-6 text-purple-400" />
-              <h4 className="text-xl font-black italic uppercase tracking-tight">EIA ADVISORY</h4>
+              <h4 className="text-xl font-black italic uppercase tracking-tight">{t('amdal.advisory.title')}</h4>
             </div>
             <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-8 mb-8">
               <div className="flex items-center gap-4 mb-4">
                 <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-                <span className="text-sm font-black text-emerald-500 uppercase italic">OPERATIONAL COMPLIANT</span>
+                <span className="text-sm font-black text-emerald-500 uppercase italic">{t('amdal.advisory.status')}</span>
               </div>
-              <p className="text-xs text-slate-400 font-light leading-relaxed">All statutory RKL-RPL obligations for the current semester are verified and logged.</p>
+              <p className="text-xs text-slate-400 font-light leading-relaxed">{t('amdal.advisory.desc')}</p>
             </div>
             <div className="space-y-4">
               <div className="flex justify-between items-center py-4 border-b border-white/5">
-                <span className="text-[10px] font-bold text-slate-500 uppercase">NEXT REPORT</span>
-                <span className="text-[10px] font-black text-white uppercase italic">JULY 2026</span>
+                <span className="text-[10px] font-bold text-slate-500 uppercase">{t('amdal.advisory.nextReport')}</span>
+                <span className="text-[10px] font-black text-white uppercase italic">{t('common.months.6')} 2026</span>
               </div>
               <div className="flex justify-between items-center py-4 border-b border-white/5">
-                <span className="text-[10px] font-bold text-slate-500 uppercase">VALIDITY</span>
-                <span className="text-[10px] font-black text-white uppercase italic">90 DAYS REMAINING</span>
+                <span className="text-[10px] font-bold text-slate-500 uppercase">{t('amdal.advisory.validity')}</span>
+                <span className="text-[10px] font-black text-white uppercase italic">90 {t('amdal.advisory.remaining')}</span>
               </div>
             </div>
           </div>
@@ -292,16 +247,16 @@ function AmdalManagement() {
           <div className="flex justify-between items-center mb-10">
             <div className="flex items-center gap-4">
               <Calendar className="w-6 h-6 text-blue-500" />
-              <h4 className="text-xl font-black text-slate-900 italic uppercase tracking-tight">Monitoring agenda</h4>
+              <h4 className="text-xl font-black text-slate-900 italic uppercase tracking-tight">{t('amdal.agenda.title')}</h4>
             </div>
             <div className="flex gap-2">
               <button className="p-2 rounded-lg border border-slate-100 hover:bg-slate-50"><ChevronLeft className="w-4 h-4" /></button>
-              <span className="px-4 py-2 text-[11px] font-black text-slate-900 uppercase">MARCH 2026</span>
+              <span className="px-4 py-2 text-[11px] font-black text-slate-900 uppercase">{t('common.months.2')} 2026</span>
               <button className="p-2 rounded-lg border border-slate-100 hover:bg-slate-50"><ChevronRight className="w-4 h-4" /></button>
             </div>
           </div>
           <div className="grid grid-cols-7 gap-px bg-slate-100 border border-slate-100 rounded-2xl overflow-hidden">
-            {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((d, i) => <div key={`${d}-${i}`} className="bg-slate-50 p-4 text-center text-[10px] font-black text-slate-400">{d}</div>)}
+            {t('common.daysShort').map((d: string, i: number) => <div key={`${d}-${i}`} className="bg-slate-50 p-4 text-center text-[10px] font-black text-slate-400">{d}</div>)}
             {Array.from({ length: 31 }).map((_, i) => (
               <div key={i} className="bg-white p-6 min-h-[100px] relative group hover:bg-slate-50 transition-colors cursor-pointer">
                 <span className="text-[12px] font-black text-slate-900">{i + 1}</span>
@@ -315,16 +270,17 @@ function AmdalManagement() {
   )
 }
 function GHGAccountingDashboard() {
+  const { t } = useLanguage();
   return (
     <div className="ghg-accounting-dashboard animate-in fade-in slide-in-from-bottom duration-1000 w-full pt-20 pb-10">
       <div className="flex justify-between items-center mb-12">
         <div>
-          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">GHG <span className="text-emerald-500">Accounting.</span></h3>
-          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-2">SRN PPI / SIGN SMART protocol carbon footprint tracking.</p>
+          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">{t('ghg.title')} <span className="text-emerald-500">{t('ghg.subtitle')}</span></h3>
+          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-2">{t('ghg.desc')}</p>
         </div>
         <div className="flex items-center gap-6">
           <div className="text-right">
-            <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1 italic">Total Emissions</div>
+            <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1 italic">{t('ghg.totalEmissions')}</div>
             <div className="text-3xl font-black text-white italic tracking-tighter">12.450,22 <span className="text-sm text-slate-500 uppercase not-italic">tCO2e</span></div>
           </div>
           <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-500">
@@ -338,7 +294,7 @@ function GHGAccountingDashboard() {
           <div className="flex justify-between items-center mb-8">
             <div className="flex items-center gap-3">
               <TrendingUp className="w-5 h-5 text-emerald-500" />
-              <h4 className="text-xl font-black italic uppercase tracking-tight">CARBON TRAJECTORY</h4>
+              <h4 className="text-xl font-black italic uppercase tracking-tight">{t('ghg.trajectory')}</h4>
             </div>
           </div>
           <div className="h-64 flex items-end gap-1 px-4 mb-8">
@@ -347,12 +303,12 @@ function GHGAccountingDashboard() {
             ))}
           </div>
           <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-widest text-slate-400 border-t border-slate-100 pt-6 italic">
-            <span>JAN 2026 Baseline</span>
+            <span>{t('common.monthsShort.0')} 2026 {t('ghg.baseline')}</span>
             <div className="flex gap-6">
               <div className="flex items-center gap-2.5"><div className="w-2.5 h-2.5 rounded-full bg-emerald-500"></div><span>SCOPE 1+2</span></div>
-              <div className="flex items-center gap-2.5"><div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div><span>PROJECTION</span></div>
+              <div className="flex items-center gap-2.5"><div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div><span>{t('ghg.projection')}</span></div>
             </div>
-            <span>DEC 2026 Target</span>
+            <span>{t('common.monthsShort.11')} 2026 {t('ghg.target')}</span>
           </div>
         </div>
 
@@ -360,11 +316,11 @@ function GHGAccountingDashboard() {
           <div className="bg-slate-900 rounded-[3rem] p-10 relative overflow-hidden h-full flex flex-col justify-between shadow-2xl">
             <div>
               <div className="text-[10px] font-black text-emerald-400 uppercase tracking-widest mb-6 italic">SRN PPI Compliance</div>
-              <h4 className="text-3xl font-black italic uppercase tracking-tighter mb-4">REDUCTION STATUS</h4>
+              <h4 className="text-3xl font-black italic uppercase tracking-tighter mb-4">{t('ghg.reduction.title')}</h4>
               <div className="w-full h-4 bg-emerald-500/10 rounded-full border border-emerald-500/20 overflow-hidden mb-4">
                 <div className="h-full bg-emerald-500 w-[68%]"></div>
               </div>
-              <p className="text-sm text-slate-400 font-light leading-relaxed">Currently tracking 12.5% below historical baseline. On target for Tier 1 Certification.</p>
+              <p className="text-sm text-slate-400 font-light leading-relaxed">{t('ghg.reduction.desc')}</p>
             </div>
             <div className="pt-8 border-t border-white/5 grid grid-cols-2 gap-6">
               <div>
@@ -383,7 +339,7 @@ function GHGAccountingDashboard() {
       <div className="bg-white border border-slate-100 rounded-[3rem] p-12 shadow-xl">
         <div className="flex items-center gap-4 mb-10">
           <Layers className="w-6 h-6 text-emerald-500" />
-          <h4 className="text-xl font-black italic uppercase tracking-tight">365-DAY CARBON INTENSITY MATRIX</h4>
+          <h4 className="text-xl font-black italic uppercase tracking-tight">{t('ghg.heatmap')}</h4>
         </div>
         <div className="grid grid-cols-[repeat(52,1fr)] gap-2">
           {Array.from({ length: 364 }).map((_, i) => (
@@ -396,12 +352,13 @@ function GHGAccountingDashboard() {
 }
 
 function WastewaterDashboard() {
+  const { t } = useLanguage();
   return (
     <div className="wastewater-dashboard animate-in fade-in slide-in-from-right duration-1000 w-full pt-20 pb-10">
       <div className="flex justify-between items-center mb-12">
         <div>
-          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">Wastewater & <span className="text-blue-500">POPAL Mgmt.</span></h3>
-          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-2">Manage IPAL BMAL compliance, daily SPARING logs, and certified operators.</p>
+          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">{t('wastewater.title')} <span className="text-blue-500">{t('wastewater.subtitle')}</span></h3>
+          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-2">{t('wastewater.desc')}</p>
         </div>
         <div className="bg-red-600/10 border border-red-500/20 rounded-2xl p-6 flex items-center gap-6 shadow-xl relative overflow-hidden">
           <div className="relative z-10 flex items-center gap-4">
@@ -409,8 +366,8 @@ function WastewaterDashboard() {
               <AlertCircle className="w-6 h-6 text-white" />
             </div>
             <div>
-              <div className="text-[10px] font-black text-red-500 uppercase tracking-[0.3em] mb-1">REGULATORY ALERT</div>
-              <div className="text-sm font-black text-white italic uppercase tracking-tight">NO ACTIVE POPAL OPERATOR</div>
+              <div className="text-[10px] font-black text-red-500 uppercase tracking-[0.3em] mb-1">{t('wastewater.alertBadge')}</div>
+              <div className="text-sm font-black text-white italic uppercase tracking-tight">{t('wastewater.alertMsg')}</div>
             </div>
           </div>
         </div>
@@ -421,7 +378,7 @@ function WastewaterDashboard() {
           <div className="flex justify-between items-center mb-8">
             <div className="flex items-center gap-3">
               <TrendingUp className="w-5 h-5 text-blue-500" />
-              <h4 className="text-xl font-black italic uppercase tracking-tight">BMAL PARAMETER TRENDS</h4>
+              <h4 className="text-xl font-black italic uppercase tracking-tight">{t('wastewater.trends')}</h4>
             </div>
             <div className="flex gap-4">
               <div className="flex items-center gap-2"><div className="w-2.5 h-2.5 rounded-full bg-blue-500"></div><span className="text-[9px] font-black text-slate-400 uppercase">PH</span></div>
@@ -438,26 +395,26 @@ function WastewaterDashboard() {
             ))}
           </div>
           <div className="flex justify-between mt-6 text-[9px] font-black text-slate-400 uppercase tracking-widest px-4 border-t border-slate-100 pt-6 italic">
-            <span>START OF SHIFT</span>
-            <span>REAL-TIME TELEMETRY STREAM</span>
-            <span>END OF SHIFT</span>
+            <span>{t('wastewater.shiftStart')}</span>
+            <span>{t('wastewater.telemetry')}</span>
+            <span>{t('wastewater.shiftEnd')}</span>
           </div>
         </div>
         <div className="col-span-4 space-y-6">
           <div className="bg-slate-900 rounded-[2.5rem] p-10 text-white relative overflow-hidden shadow-2xl h-full flex flex-col justify-between">
             <div>
-              <div className="text-[10px] font-black text-blue-400 uppercase tracking-[0.3em] mb-6 italic">Compliance Score</div>
+              <div className="text-[10px] font-black text-blue-400 uppercase tracking-[0.3em] mb-6 italic">{t('wastewater.complianceScore')}</div>
               <div className="text-6xl font-black italic tracking-tighter mb-4">98.2<span className="text-xl text-slate-500">%</span></div>
-              <p className="text-xs text-slate-400 font-light leading-relaxed">Integrated SPARING telemetry verification confirms high boundary limit adherence.</p>
+              <p className="text-xs text-slate-400 font-light leading-relaxed">{t('wastewater.telemetryDesc')}</p>
             </div>
             <div className="pt-8 border-t border-white/5 space-y-4">
               <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-widest italic">
-                <span className="text-slate-500">SPARING Status</span>
-                <span className="text-emerald-500">ONLINE</span>
+                <span className="text-slate-500">{t('wastewater.sparingStatus')}</span>
+                <span className="text-emerald-500">{t('compliance.charts.active')}</span>
               </div>
               <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-widest italic">
-                <span className="text-slate-500">Last KLHK Sync</span>
-                <span className="text-white">12 SEC AGO</span>
+                <span className="text-slate-500">{t('wastewater.klhkSync')}</span>
+                <span className="text-white">12 SEC {t('security.audit.ago.mins')}</span>
               </div>
             </div>
           </div>
@@ -467,7 +424,7 @@ function WastewaterDashboard() {
       <div className="bg-white border border-slate-100 rounded-[3rem] p-12 shadow-xl">
         <div className="flex items-center gap-4 mb-8">
           <Database className="w-6 h-6 text-blue-500" />
-          <h4 className="text-xl font-black italic uppercase tracking-tight">365-day sparing compliance matrix</h4>
+          <h4 className="text-xl font-black italic uppercase tracking-tight">{t('wastewater.matrix')}</h4>
         </div>
         <div className="grid grid-cols-[repeat(52,1fr)] gap-2">
           {Array.from({ length: 364 }).map((_, i) => (
@@ -480,22 +437,23 @@ function WastewaterDashboard() {
 }
 
 function B3WasteManagement() {
+  const { t } = useLanguage();
   const neraca = [
-    { label: 'OILY SLUDGE / PIT', cat: 'CATEGORY 1', code: 'A351-1', val: '124.5', unit: 'T' },
-    { label: 'CONTAMINATED SOIL', cat: 'CATEGORY 2', code: 'B104-d', val: '842.1', unit: 'T' },
-    { label: 'USED CHEMICALS', cat: 'CATEGORY 1', code: 'A102-d', val: '12.8', unit: 'M3' },
-    { label: 'MEDICAL WASTE', cat: 'CATEGORY 1', code: 'A337-1', val: '4.2', unit: 'KG' }
+    { label: t('waste.neraca.oilySludge'), cat: t('waste.neraca.category1'), code: 'A351-1', val: '124.5', unit: 'T' },
+    { label: t('waste.neraca.contaminatedSoil'), cat: t('waste.neraca.category2'), code: 'B104-d', val: '842.1', unit: 'T' },
+    { label: t('waste.neraca.usedChemicals'), cat: t('waste.neraca.category1'), code: 'A102-d', val: '12.8', unit: 'M3' },
+    { label: t('waste.neraca.medicalWaste'), cat: t('waste.neraca.category1'), code: 'A337-1', val: '4.2', unit: 'KG' }
   ];
 
   return (
     <div className="b3-waste-management animate-in fade-in slide-in-from-left duration-1000 w-full pt-20 pb-10">
-      <div className="flex justify-between items-center mb-10">
+      <div className="flex justify-between items-center mb-12">
         <div>
-          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">B3 Waste <span className="text-amber-500">Management.</span></h3>
-          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-2">End-to-end hazardous waste manifest lifecycle & Festronik integration.</p>
+          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">{t('waste.title')} <span className="text-amber-500">{t('waste.subtitle')}</span></h3>
+          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-2">{t('waste.desc')}</p>
         </div>
         <button className="bg-amber-600 text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest flex items-center gap-3 hover:bg-amber-700 transition-all shadow-xl shadow-amber-600/20">
-          <PlusCircle className="w-4 h-4" /> NEW MANIFEST
+          <PlusCircle className="w-4 h-4" /> {t('waste.action')}
         </button>
       </div>
 
@@ -503,7 +461,7 @@ function B3WasteManagement() {
         <div className="col-span-4 bg-white border border-slate-100 rounded-[2.5rem] p-10 shadow-xl">
           <div className="flex items-center gap-3 mb-8">
             <Activity className="w-5 h-5 text-amber-500" />
-            <h4 className="text-sm font-black text-slate-900 italic uppercase tracking-wider">WASTE CATEGORY SPLIT</h4>
+            <h4 className="text-sm font-black text-slate-900 italic uppercase tracking-wider">{t('waste.category.title')}</h4>
           </div>
           <div className="relative flex justify-center mb-10">
             <svg viewBox="0 0 100 100" className="w-48 h-48 transform -rotate-90">
@@ -513,13 +471,13 @@ function B3WasteManagement() {
             </svg>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <span className="text-3xl font-black text-slate-900 italic">72%</span>
-              <span className="text-[8px] font-black text-slate-400 uppercase">CAT 1 / CAT 2</span>
+              <span className="text-[8px] font-black text-slate-400 uppercase">{t('waste.category.split')}</span>
             </div>
           </div>
           <div className="space-y-4">
             <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
-              <span className="text-slate-400">CLEARANCE RATE</span>
-              <span className="text-emerald-500">OPTIMAL</span>
+              <span className="text-slate-400">{t('waste.category.clearance')}</span>
+              <span className="text-emerald-500">{t('waste.category.optimal')}</span>
             </div>
             <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
               <div className="h-full bg-blue-500 w-[72%]"></div>
@@ -531,7 +489,7 @@ function B3WasteManagement() {
           <div className="flex justify-between items-center mb-8">
             <div className="flex items-center gap-3">
               <TrendingUp className="w-5 h-5 text-orange-500" />
-              <h4 className="text-xl font-black italic uppercase tracking-tight">GENERATION vs HANDOVER</h4>
+              <h4 className="text-xl font-black italic uppercase tracking-tight">{t('waste.generation.title')}</h4>
             </div>
           </div>
           <div className="h-64 flex items-end gap-2">
@@ -544,10 +502,10 @@ function B3WasteManagement() {
           </div>
           <div className="flex justify-between mt-8 text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] border-t border-white/5 pt-8">
             <div className="flex gap-6">
-              <div className="flex items-center gap-2"><div className="w-3 h-1 bg-orange-500"></div><span>GENERATION</span></div>
-              <div className="flex items-center gap-2"><div className="w-3 h-1 bg-blue-500"></div><span>HANDOVER</span></div>
+              <div className="flex items-center gap-2"><div className="w-3 h-1 bg-orange-500"></div><span>{t('waste.generation.label')}</span></div>
+              <div className="flex items-center gap-2"><div className="w-3 h-1 bg-blue-500"></div><span>{t('waste.handover.label')}</span></div>
             </div>
-            <span>LAST 24 CYCLES</span>
+            <span>{t('waste.cycles')}</span>
           </div>
         </div>
       </div>
@@ -555,13 +513,13 @@ function B3WasteManagement() {
       <div className="bg-white border border-slate-100 rounded-[3rem] p-12 shadow-xl">
         <div className="flex items-center gap-4 mb-10">
           <Database className="w-6 h-6 text-blue-500" />
-          <h4 className="text-xl font-black italic uppercase tracking-tight">STORAGE TIMELINE MATRIX</h4>
+          <h4 className="text-xl font-black italic uppercase tracking-tight">{t('waste.timeline.title')}</h4>
         </div>
         <table className="w-full border-collapse">
           <thead>
             <tr className="border-b border-slate-100">
-              <th className="py-6 text-left text-[11px] font-black text-slate-400 uppercase tracking-widest">WASTE STREAM ORIGIN</th>
-              {['JANURY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE'].map((m, i) => <th key={`${m}-${i}`} className="text-center text-[11px] font-black text-slate-400 uppercase tracking-widest">{m}</th>)}
+              <th className="py-6 text-left text-[11px] font-black text-slate-400 uppercase tracking-widest">{t('waste.timeline.origin')}</th>
+              {[t('common.months.0'), t('common.months.1'), t('common.months.2'), t('common.months.3'), t('common.months.4'), t('common.months.5')].map((m, i) => <th key={`${m}-${i}`} className="text-center text-[11px] font-black text-slate-400 uppercase tracking-widest">{m}</th>)}
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50">
@@ -570,8 +528,8 @@ function B3WasteManagement() {
                 <td className="py-8">
                   <div className="text-lg font-black text-slate-900 italic uppercase leading-none mb-2">{item.label}</div>
                   <div className="flex items-center gap-3">
-                    <span className={`px-3 py-1 rounded-lg text-[9px] font-black uppercase ${item.cat === 'CATEGORY 1' ? 'bg-red-100 text-red-600' : 'bg-orange-100 text-orange-600'}`}>{item.cat}</span>
-                    <span className="text-[10px] font-bold text-slate-400 tracking-widest">{item.code} • TPS: {item.val} {item.unit}</span>
+                    <span className={`px-3 py-1 rounded-lg text-[9px] font-black uppercase ${item.cat === t('waste.neraca.category1') ? 'bg-red-100 text-red-600' : 'bg-orange-100 text-orange-600'}`}>{item.cat}</span>
+                    <span className="text-[10px] font-bold text-slate-400 tracking-widest">{item.code} • {t('waste.tps')}: {item.val} {item.unit}</span>
                   </div>
                 </td>
                 {[...Array(6)].map((_, i) => (
@@ -589,16 +547,17 @@ function B3WasteManagement() {
 }
 
 function ISO14001Dashboard() {
+  const { t } = useLanguage();
   const cards = [
-    { label: 'Audit Readiness', val: '97.4%', color: 'text-emerald-400', bar: true, trend: '+2.1%' },
-    { label: 'Significant Aspects', val: '03', sub: 'Critical Impacts Identified', color: 'text-orange-400', trend: 'STABLE' },
-    { label: 'Legal Compliance', val: '100%', sub: 'Obligations Verified', color: 'text-blue-400', trend: 'VERIFIED' },
-    { label: 'Non-Conformities', val: '00', sub: 'Zero Pending CAPAs', color: 'text-emerald-500', trend: 'OPTIMAL' }
+    { label: t('iso.cards.readiness'), val: '97.4%', color: 'text-emerald-400', bar: true, trend: '+2.1%' },
+    { label: t('iso.cards.aspects'), val: '03', sub: t('iso.cards.aspectsSub'), color: 'text-orange-400', trend: t('iso.cards.stable') },
+    { label: t('iso.cards.legal'), val: '100%', sub: t('iso.cards.legalSub'), color: 'text-blue-400', trend: t('iso.cards.verified') },
+    { label: t('iso.cards.nc'), val: '00', sub: t('iso.cards.ncSub'), color: 'text-emerald-500', trend: t('iso.cards.optimal') }
   ];
 
   return (
-    <div className="w-full flex flex-col gap-8 pt-20 pb-10">
-      <div className="grid grid-cols-4 gap-6">
+    <div className="iso-dashboard animate-in fade-in slide-in-from-top duration-1000 w-full pt-20 pb-10">
+      <div className="grid grid-cols-4 gap-6 mb-12">
         {cards.map((c, i) => (
           <div key={i} className="glass-panel rounded-[2rem] p-8 relative overflow-hidden group">
             <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -625,10 +584,10 @@ function ISO14001Dashboard() {
           <div className="absolute top-0 right-0 p-10 opacity-5">
             <Layers className="w-40 h-40 text-emerald-500" />
           </div>
-          <h4 className="text-[11px] font-black text-emerald-500 uppercase tracking-[0.5em] italic mb-12">Aspect Significance Matrix</h4>
+          <h4 className="text-[11px] font-black text-emerald-500 uppercase tracking-[0.5em] italic mb-12">{t('iso.aspectMatrix.title')}</h4>
           <div className="aspect-square w-full grid grid-cols-5 gap-3 relative">
             <div className="absolute -left-12 top-0 h-full flex flex-col justify-between text-[9px] font-black text-white/10 italic py-2">
-              <span>HI</span><span>MD</span><span>LO</span>
+              <span>{t('iso.aspectMatrix.high')}</span><span>{t('iso.aspectMatrix.medium')}</span><span>{t('iso.aspectMatrix.low')}</span>
             </div>
             {Array.from({ length: 25 }).map((_, i) => {
               const row = Math.floor(i / 5);
@@ -645,20 +604,20 @@ function ISO14001Dashboard() {
             })}
           </div>
           <div className="mt-12 flex justify-between items-center border-t border-white/5 pt-10">
-            <span className="text-[10px] font-black text-white/30 uppercase">Probability × Severity</span>
-            <span className="text-emerald-500 text-[10px] font-black">2 ACTIVE RISKS</span>
+            <span className="text-[10px] font-black text-white/30 uppercase">{t('iso.aspectMatrix.probSeverity')}</span>
+            <span className="text-emerald-500 text-[10px] font-black">{t('iso.aspectMatrix.activeRisks')}</span>
           </div>
         </div>
 
         <div className="col-span-8 grid grid-rows-2 gap-10">
           <div className="glass-panel rounded-[3rem] p-12 flex items-center gap-16 relative overflow-hidden">
             <div className="flex-1">
-              <h4 className="text-[11px] font-black text-white/30 uppercase tracking-[0.4em] mb-10">CAPA Lifecycle Analytics</h4>
+              <h4 className="text-[11px] font-black text-white/30 uppercase tracking-[0.4em] mb-10">{t('iso.capa.title')}</h4>
               <div className="space-y-8">
                 {[
-                  { label: 'Root Cause Identified', val: 100, color: 'bg-emerald-500' },
-                  { label: 'Active Remediation', val: 78, color: 'bg-blue-500' },
-                  { label: 'Technical Verification', val: 42, color: 'bg-white/10' }
+                  { label: t('iso.capa.rootCause'), val: 100, color: 'bg-emerald-500' },
+                  { label: t('iso.capa.remediation'), val: 78, color: 'bg-blue-500' },
+                  { label: t('iso.capa.technical'), val: 42, color: 'bg-white/10' }
                 ].map((item, i) => (
                   <div key={i}>
                     <div className="flex justify-between text-[10px] font-black mb-3 uppercase tracking-widest">
@@ -679,15 +638,15 @@ function ISO14001Dashboard() {
               </svg>
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <span className="text-4xl font-black italic tracking-tighter text-white">12</span>
-                <span className="text-[9px] font-black text-white/40 uppercase tracking-widest mt-2">Active CAPA</span>
+                <span className="text-[9px] font-black text-white/40 uppercase tracking-widest mt-2">{t('iso.capa.active')}</span>
               </div>
             </div>
           </div>
 
           <div className="glass-panel rounded-[3rem] p-12 relative overflow-hidden">
             <div className="flex justify-between items-center mb-8 relative z-10">
-              <h4 className="text-[11px] font-black text-blue-400 uppercase tracking-[0.5em] italic">Regulatory Vigilance Stream</h4>
-              <div className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-xl text-[10px] font-black text-blue-400 uppercase">Live Stream</div>
+              <h4 className="text-[11px] font-black text-blue-400 uppercase tracking-[0.5em] italic">{t('iso.vigilance.title')}</h4>
+              <div className="px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-xl text-[10px] font-black text-blue-400 uppercase">{t('iso.vigilance.liveStream')}</div>
             </div>
             <div className="h-24 flex items-end gap-2 relative z-10">
               {Array.from({ length: 48 }).map((_, i) => {
@@ -705,23 +664,24 @@ function ISO14001Dashboard() {
 }
 
 function DomesticWasteDashboard() {
+  const { t } = useLanguage();
   const categories = [
-    { label: 'ORGANIC WASTE', val: '42%', color: 'text-emerald-500', sub: 'Compostable Material' },
-    { label: 'PLASTICS / PET', val: '28%', color: 'text-blue-500', sub: 'Recyclable Stream' },
-    { label: 'PAPER / CARTON', val: '18%', color: 'text-amber-500', sub: 'Processing Hub' },
-    { label: 'RESIDUE', val: '12%', color: 'text-slate-400', sub: 'Final Disposal' }
+    { label: t('domestic.categories.organic'), val: '42%', color: 'text-emerald-500', sub: t('domestic.categories.organicSub') },
+    { label: t('domestic.categories.plastic'), val: '28%', color: 'text-blue-500', sub: t('domestic.categories.plasticSub') },
+    { label: t('domestic.categories.paper'), val: '18%', color: 'text-amber-500', sub: t('domestic.categories.paperSub') },
+    { label: t('domestic.categories.residue'), val: '12%', color: 'text-slate-400', sub: t('domestic.categories.residueSub') }
   ];
 
   return (
-    <div className="domestic-waste-management animate-in fade-in slide-in-from-bottom duration-1000 w-full pt-20 pb-10">
-      <div className="flex justify-between items-center mb-10">
+    <div className="domestic-waste-dashboard animate-in fade-in slide-in-from-bottom duration-1000 w-full pt-20 pb-10">
+      <div className="flex justify-between items-center mb-12">
         <div>
-          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">Domestic <span className="text-emerald-500">Waste.</span></h3>
-          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-2">Circular economy tracking & Non-B3 waste processing metrics.</p>
+          <h3 className="text-4xl font-black text-white italic uppercase tracking-tighter">{t('domestic.title')} <span className="text-emerald-500">{t('domestic.subtitle')}</span></h3>
+          <p className="text-[12px] text-slate-500 font-bold uppercase tracking-[0.2em] mt-2">{t('domestic.desc')}</p>
         </div>
         <div className="flex items-center gap-4">
           <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-2xl">
-            <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest leading-none">RECYCLING RATE: 88%</span>
+            <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest leading-none">{t('domestic.recyclingRate')}: 88%</span>
           </div>
         </div>
       </div>
@@ -742,10 +702,10 @@ function DomesticWasteDashboard() {
       <div className="grid grid-cols-12 gap-8">
         <div className="col-span-12 glass-panel rounded-[3rem] p-12 relative overflow-hidden">
           <div className="flex justify-between items-center mb-12">
-            <h4 className="text-[11px] font-black text-white/30 uppercase tracking-[0.5em] italic">SEGREGATION EFFICIENCY TIMELINE</h4>
+            <h4 className="text-[11px] font-black text-white/30 uppercase tracking-[0.5em] italic">{t('domestic.segregation.title')}</h4>
             <div className="flex gap-4">
-              <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-500"></div><span className="text-[9px] font-black text-white/40 uppercase">Target</span></div>
-              <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-blue-500"></div><span className="text-[9px] font-black text-white/40 uppercase">Actual</span></div>
+              <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-emerald-500"></div><span className="text-[9px] font-black text-white/40 uppercase">{t('domestic.segregation.target')}</span></div>
+              <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-blue-500"></div><span className="text-[9px] font-black text-white/40 uppercase">{t('domestic.segregation.actual')}</span></div>
             </div>
           </div>
           <div className="h-64 flex items-end gap-3 px-4">
@@ -762,7 +722,7 @@ function DomesticWasteDashboard() {
             })}
           </div>
           <div className="mt-8 pt-8 border-t border-white/5 flex justify-between text-[9px] font-black text-white/10 uppercase tracking-[0.4em]">
-            <span>DAY 01</span><span>DAILY MONITORING CYCLE</span><span>DAY 30</span>
+            <span>{t('domestic.segregation.day')} 01</span><span>{t('domestic.segregation.cycle')}</span><span>{t('domestic.segregation.day')} 30</span>
           </div>
         </div>
       </div>
@@ -771,38 +731,53 @@ function DomesticWasteDashboard() {
 }
 
 function ProperDashboard() {
+  const { t } = useLanguage();
   return (
-    <div className="w-full flex flex-col gap-4 pt-20 pb-10">
-      <div className="glass-panel rounded-[3rem] p-10 flex justify-between items-center relative overflow-hidden group">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full -mr-48 -mt-48 blur-3xl"></div>
-        <div className="flex-1 max-w-2xl relative z-10">
-          <div className="flex justify-between items-end mb-8">
-            <div>
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] text-emerald-500/50 mb-3 block italic">Performance Maturity Tracker</span>
-              <h3 className="text-5xl font-black italic tracking-tighter text-white uppercase leading-none">Indonesian Ministry <br /><span className="text-emerald-500">PROPER 2026.</span></h3>
-            </div>
-            <div className="text-right">
-              <div className="text-5xl font-black italic text-white mb-2 tracking-tighter">32.8%</div>
-              <div className="text-[9px] font-black text-white/30 uppercase tracking-[0.3em] px-4 py-1.5 bg-white/5 rounded-2xl border border-white/10 inline-block">Maturity Score</div>
-            </div>
+    <div className="proper-dashboard animate-in fade-in slide-in-from-right duration-1000 w-full pt-20 pb-10">
+      <div className="flex justify-between items-center mb-16">
+        <div className="flex items-center gap-12">
+          <div className="w-32 h-32 rounded-[2.5rem] bg-slate-950 flex items-center justify-center text-emerald-500 shadow-2xl border border-white/10 shrink-0">
+            <Trophy className="w-16 h-16 drop-shadow-[0_0_20px_rgba(16,185,129,0.5)]" />
           </div>
-          <div className="h-3 w-full bg-white/5 rounded-full overflow-hidden relative border border-white/5">
-            <div className="h-full bg-gradient-to-r from-blue-600 to-emerald-500 w-[32.8%] shadow-[0_0_30px_rgba(16,185,129,0.4)]"></div>
-          </div>
-          <div className="flex justify-between mt-6 text-[9px] font-black text-white/20 uppercase tracking-[0.4em]">
-            <span>STARTUP</span><span>BLUE (TAAT)</span><span>GREEN</span><span className="text-emerald-500">GOLD STATUS</span>
+          <div>
+            <h4 className="text-[11px] font-black text-emerald-500 uppercase tracking-[0.5em] mb-4 italic">{t('proper.maturityTracker')}</h4>
+            <h3 className="text-5xl font-black italic uppercase tracking-tighter leading-none text-white">{t('proper.title')} <br /><span className="text-emerald-500">{t('proper.subtitle')}</span></h3>
           </div>
         </div>
+        <div className="flex gap-10">
+          <div className="text-right">
+            <div className="text-[10px] font-black text-slate-500 uppercase tracking-[0.3em] mb-3 italic">{t('proper.maturityScore')}</div>
+            <div className="text-6xl font-black text-white italic tracking-[-0.05em]">84.2<span className="text-xl text-emerald-500">%</span></div>
+          </div>
+          <div className="w-px h-24 bg-white/5"></div>
+          <div className="flex flex-col justify-center space-y-4">
+            {[t('proper.status.startup'), t('proper.status.blue'), t('proper.status.green'), t('proper.status.gold')].map((status, i) => (
+              <div key={i} className="flex items-center gap-4">
+                <div className={`w-2.5 h-2.5 rounded-full ${i <= 1 ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]' : 'bg-white/5 border border-white/10'}`}></div>
+                <span className={`text-[10px] font-black uppercase tracking-widest italic ${i <= 1 ? 'text-white' : 'text-white/20'}`}>{status}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-        <div className="ml-16 glass-panel rounded-[2.5rem] p-10 text-white w-[26rem] relative overflow-hidden group/ai active-glowing">
-          <Zap className="absolute top-6 right-6 text-orange-400 w-6 h-6 animate-pulse" />
-          <h5 className="text-[10px] font-black uppercase tracking-[0.5em] text-emerald-500 mb-8">AI Predictive Insight</h5>
-          <p className="text-[13px] leading-relaxed font-light italic text-white/80">"Current trajectory indicates a <span className="text-white font-bold text-base">12% shortfall</span> in Biodiversity Innovation metrics. Implementing <span className="text-emerald-400 underline decoration-dotted">MIGAS-TECH Protocols</span> will trigger a status elevation to <span className="text-emerald-500 font-bold uppercase tracking-[0.2em] px-2 bg-emerald-500/10 rounded-md">GOLD</span> by Q3 2026."</p>
-          <div className="mt-8 flex items-center justify-between">
-            <span className="text-[9px] font-black uppercase text-white/20 tracking-[0.3em]">Engine v4.28.0</span>
-            <button className="text-[9px] font-black uppercase tracking-[0.3em] text-emerald-400 flex items-center gap-2.5 group/btn">
-              Strategy Book <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
-            </button>
+      <div className="glass-panel rounded-[3.5rem] p-12 mb-10 relative overflow-hidden group border border-white/5">
+        <div className="absolute top-0 right-0 p-12 opacity-5">
+          <Zap className="w-48 h-48 text-emerald-500 animate-pulse" />
+        </div>
+        <div className="flex items-center gap-12">
+          <div className="w-24 h-24 rounded-[2rem] bg-emerald-500 shadow-[0_0_40px_rgba(16,185,129,0.4)] flex items-center justify-center border border-emerald-400">
+            <BrainCircuit className="w-12 h-12 text-white" />
+          </div>
+          <div className="flex-1">
+            <span className="text-emerald-500 text-[10px] font-black uppercase tracking-[0.4em] mb-3 block italic">{t('proper.aiInsight')}</span>
+            <p className="text-lg text-white/80 leading-relaxed font-light italic max-w-4xl">"{t('proper.aiStrategy')}"</p>
+            <div className="mt-8 flex items-center justify-between">
+              <span className="text-[9px] font-black uppercase text-white/20 tracking-[0.3em]">Engine v4.28.0</span>
+              <button className="text-[9px] font-black uppercase tracking-[0.3em] text-emerald-400 flex items-center gap-2.5 group/btn">
+                {t('proper.strategyBook')} <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-2 transition-transform" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -810,27 +785,27 @@ function ProperDashboard() {
       <div className="grid grid-cols-12 gap-6 flex-1">
         <div className="col-span-8 glass-panel rounded-[2.5rem] p-10 relative overflow-hidden">
           <div className="flex justify-between items-center mb-10">
-            <h4 className="text-[10px] font-black text-white/30 uppercase tracking-[0.5em] italic">Regulatory Compliance Vault (Taat)</h4>
-            <div className="px-4 py-1.5 bg-emerald-500 rounded-xl text-[9px] font-black text-white shadow-2xl shadow-emerald-500/30 italic">VALIDATED v2.4</div>
+            <h4 className="text-[10px] font-black text-white/30 uppercase tracking-[0.5em] italic">{t('proper.vaultTitle')}</h4>
+            <div className="px-4 py-1.5 bg-emerald-500 rounded-xl text-[9px] font-black text-white shadow-2xl shadow-emerald-500/30 italic">{t('proper.vaultValidated')}</div>
           </div>
           <div className="grid grid-cols-1 gap-4">
             {[
-              { label: 'IPAL POPAL MONITORING', sub: 'Mandatory Blue Requirement', status: 'COMPLIANT', icon: <Droplets className="w-6 h-6" /> },
-              { label: 'SIMPEL AIR EMISSION', sub: 'Technical Data Integrity', status: 'COMPLIANT', icon: <Wind className="w-6 h-6" /> },
-              { label: 'FESTRONIK B3 MANIFEST', sub: 'End-to-End Traceability', status: 'COMPLIANT', icon: <Database className="w-6 h-6" /> }
-            ].map((t, i) => (
+              { label: t('proper.vaultItems.ipal'), sub: t('proper.vaultItems.ipalSub'), status: t('proper.compliant'), icon: <Droplets className="w-6 h-6" /> },
+              { label: t('proper.vaultItems.air'), sub: t('proper.vaultItems.airSub'), status: t('proper.compliant'), icon: <Wind className="w-6 h-6" /> },
+              { label: t('proper.vaultItems.b3'), sub: t('proper.vaultItems.b3Sub'), status: t('proper.compliant'), icon: <Database className="w-6 h-6" /> }
+            ].map((it, i) => (
               <div key={i} className="flex items-center justify-between p-8 bg-white/2 border border-white/5 hover:border-emerald-500/30 transition-all rounded-[2rem] group/item hover:bg-white/5">
                 <div className="flex items-center gap-8">
                   <div className="w-14 h-14 rounded-2xl bg-slate-900 border border-white/10 flex items-center justify-center text-emerald-500 shadow-xl group-hover/item:scale-110 transition-transform">
-                    {t.icon}
+                    {it.icon}
                   </div>
                   <div>
-                    <span className="text-base font-black text-white italic uppercase tracking-tighter block mb-1">{t.label}</span>
-                    <span className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em]">{t.sub}</span>
+                    <span className="text-base font-black text-white italic uppercase tracking-tighter block mb-1">{it.label}</span>
+                    <span className="text-[9px] font-bold text-white/20 uppercase tracking-[0.2em]">{it.sub}</span>
                   </div>
                 </div>
                 <div className="text-right">
-                  <span className="text-lg font-black text-emerald-500 italic uppercase block mb-2 tracking-tighter">{t.status}</span>
+                  <span className="text-lg font-black text-emerald-500 italic uppercase block mb-2 tracking-tighter">{it.status}</span>
                   <div className="flex gap-1 justify-end">
                     {[...Array(5)].map((_, j) => <div key={j} className="w-5 h-1 bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)] rounded-full"></div>)}
                   </div>
@@ -842,8 +817,8 @@ function ProperDashboard() {
 
         <div className="col-span-4 glass-panel rounded-[2.5rem] p-10 relative overflow-hidden">
           <div className="flex justify-between items-center mb-10">
-            <h4 className="text-[10px] font-black text-white/30 uppercase tracking-[0.5em] italic">Compliance Trend</h4>
-            <span className="text-[9px] font-black text-emerald-500 uppercase italic">12 Months</span>
+            <h4 className="text-[10px] font-black text-white/30 uppercase tracking-[0.5em] italic">{t('proper.trendTitle')}</h4>
+            <span className="text-[9px] font-black text-emerald-500 uppercase italic">{t('proper.months')}</span>
           </div>
           <div className="h-48 w-full relative">
             <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -856,7 +831,7 @@ function ProperDashboard() {
             </div>
           </div>
           <div className="mt-14 flex justify-between text-[11px] font-black text-white/10 uppercase tracking-[0.5em]">
-            <span>JAN</span><span>STATUS</span><span>DEC</span>
+            <span>{t('common.monthsShort.0')}</span><span>{t('proper.trendStatus')}</span><span>{t('common.monthsShort.11')}</span>
           </div>
         </div>
       </div>
@@ -865,6 +840,7 @@ function ProperDashboard() {
 }
 
 function ESGIntelligenceDashboard() {
+  const { t } = useLanguage();
   return (
     <div className="w-full flex flex-col gap-6 pt-20 pb-10">
       <div className="glass-panel rounded-[3.5rem] p-10 flex justify-between items-center relative overflow-hidden group">
@@ -874,11 +850,11 @@ function ESGIntelligenceDashboard() {
             <BarChart3 className="w-14 h-14 text-white" />
           </div>
           <div>
-            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-emerald-500/50 mb-3 block italic">Performance Indexing Engine</span>
-            <h3 className="text-5xl font-black italic uppercase tracking-tighter mb-5 leading-none text-white">Advanced <br /><span className="text-emerald-500">ESG Intelligence.</span></h3>
+            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-emerald-500/50 mb-3 block italic">{t('intelligence.badge')}</span>
+            <h3 className="text-5xl font-black italic uppercase tracking-tighter mb-5 leading-none text-white">{t('intelligence.title')} <br /><span className="text-emerald-500">{t('intelligence.subtitle')}</span></h3>
             <div className="flex gap-4">
               <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em] px-6 py-3 bg-white/5 rounded-2xl border border-white/10 italic">v4.0.0 Enterprise Core</span>
-              <span className="text-[10px] font-black text-emerald-400 uppercase tracking-[0.3em] px-6 py-3 bg-emerald-500/10 rounded-2xl border border-emerald-500/20 italic">Path: Net Zero 2050</span>
+              <span className="text-[10px] font-black text-emerald-400 uppercase tracking-[0.3em] px-6 py-3 bg-emerald-500/10 rounded-2xl border border-emerald-500/20 italic">{t('intelligence.path')}</span>
             </div>
           </div>
         </div>
@@ -894,13 +870,13 @@ function ESGIntelligenceDashboard() {
           </svg>
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <span className="text-6xl font-black italic tracking-tighter leading-none mb-1 text-white">88.4</span>
-            <span className="text-[9px] font-black uppercase tracking-[0.4em] text-emerald-500/50 italic">Index Status</span>
+            <span className="text-[9px] font-black uppercase tracking-[0.4em] text-emerald-500/50 italic">{t('intelligence.indexStatus')}</span>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-4 gap-6 flex-1">
-        {['Standard Path', 'Maturity Curve', 'Master Level'].map((lvl, i) => (
+        {[t('intelligence.levels.standard'), t('intelligence.levels.maturity'), t('intelligence.levels.master')].map((lvl, i) => (
           <div key={i} className="glass-panel rounded-[2.5rem] p-8 flex flex-col justify-between group/card hover:border-emerald-500/30 transition-all relative overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-white/2 rounded-full -mr-24 -mt-24 blur-3xl"></div>
             <div>
@@ -912,12 +888,12 @@ function ESGIntelligenceDashboard() {
               </div>
               <h4 className="text-3xl font-black italic uppercase tracking-tighter mb-8 leading-tight text-white group-hover:text-emerald-400 transition-colors">{lvl}</h4>
               <button className="w-full py-4 rounded-xl bg-emerald-500 text-white text-[10px] font-black uppercase tracking-[0.3em] shadow-2xl shadow-emerald-950/40 hover:scale-105 transition-transform italic">
-                Initialize Matrix
+                {t('intelligence.initMatrix')}
               </button>
             </div>
             <div className="pt-8 border-t border-white/5 mt-8">
               <div className="flex justify-between text-[10px] font-black uppercase tracking-[0.3em] mb-5">
-                <span className="text-white/30 italic">Mastery Completion</span>
+                <span className="text-white/30 italic">{t('intelligence.mastery')}</span>
                 <span className="text-emerald-500">{32 + i * 24}%</span>
               </div>
               <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
@@ -936,15 +912,15 @@ function ESGIntelligenceDashboard() {
               <Cpu className="w-8 h-8" />
             </div>
             <div>
-              <h4 className="text-xs font-black uppercase tracking-[0.4em] text-white leading-none mb-2 italic">Context Engine</h4>
-              <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">Active Processing</span>
+              <h4 className="text-xs font-black uppercase tracking-[0.4em] text-white leading-none mb-2 italic">{t('intelligence.engine')}</h4>
+              <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">{t('intelligence.active')}</span>
             </div>
           </div>
           <div className="space-y-4 flex-1">
-            <div className="h-12 bg-white/2 rounded-xl border border-white/5 flex items-center px-4 text-[10px] font-black text-white/20 italic tracking-widest uppercase">System Override Target...</div>
-            <div className="h-12 bg-white/2 rounded-xl border border-white/5 flex items-center px-4 text-[10px] font-black text-white/20 italic tracking-widest uppercase">Global Variable Sync...</div>
+            <div className="h-12 bg-white/2 rounded-xl border border-white/5 flex items-center px-4 text-[10px] font-black text-white/20 italic tracking-widest uppercase">{t('intelligence.placeholder1')}</div>
+            <div className="h-12 bg-white/2 rounded-xl border border-white/5 flex items-center px-4 text-[10px] font-black text-white/20 italic tracking-widest uppercase">{t('intelligence.placeholder2')}</div>
             <button className="w-full py-6 mt-8 bg-blue-600 rounded-2xl text-white text-xs font-black uppercase tracking-[0.3em] shadow-[0_0_40px_rgba(37,99,235,0.4)] hover:bg-blue-500 transition-all group-hover:scale-[1.02] italic">
-              Verify Neural Link
+              {t('intelligence.verifyLink')}
             </button>
           </div>
         </div>
@@ -954,6 +930,7 @@ function ESGIntelligenceDashboard() {
 }
 
 function LegalRegisterDashboard() {
+  const { t } = useLanguage();
   const laws = [
     { no: '01', type: 'ACT', sub: 'General Environment', title: 'Undang-Undang No. 32 Tahun 2009', desc: 'UU Perlindungan dan Pengelolaan Lingkungan Hidup (PPLH)', compliance: 'FULL' },
     { no: '02', type: 'ACT', sub: 'Carbon Economy', title: 'Undang-Undang No. 6 Tahun 2023', desc: 'Penetapan Perppu No. 2 Tahun 2022 tentang Cipta Kerja', compliance: 'FULL' },
@@ -965,10 +942,10 @@ function LegalRegisterDashboard() {
     <div className="w-full flex flex-col gap-8 pt-20 pb-10">
       <div className="grid grid-cols-4 gap-6">
         {[
-          { label: 'Total Regulations', val: '1,248', icon: <Scale className="w-6 h-6" />, color: 'text-blue-400' },
-          { label: 'Implementation Avg', val: '98.2%', icon: <ShieldCheck className="w-6 h-6" />, color: 'text-emerald-400' },
-          { label: 'Upcoming Reviews', val: '00', icon: <Clock className="w-6 h-6" />, color: 'text-orange-400' },
-          { label: 'Supreme Acts', val: '03', icon: <Target className="w-6 h-6" />, color: 'text-red-400' }
+          { label: t('legal.cards.total'), val: '1,248', icon: <Scale className="w-6 h-6" />, color: 'text-blue-400' },
+          { label: t('legal.cards.avg'), val: '98.2%', icon: <ShieldCheck className="w-6 h-6" />, color: 'text-emerald-400' },
+          { label: t('legal.cards.reviews'), val: '00', icon: <Clock className="w-6 h-6" />, color: 'text-orange-400' },
+          { label: t('legal.cards.acts'), val: '03', icon: <Target className="w-6 h-6" />, color: 'text-red-400' }
         ].map((c, i) => (
           <div key={i} className="glass-panel rounded-[2rem] p-8 relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-20 transition-all group-hover:scale-125 duration-700">
@@ -985,13 +962,13 @@ function LegalRegisterDashboard() {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent"></div>
         <div className="flex justify-between items-center mb-16 relative z-10">
           <div>
-            <h4 className="text-emerald-500 text-[11px] font-black uppercase tracking-[0.5em] mb-4 italic">Enterprise Regulatory Vault</h4>
-            <span className="text-white/30 text-[10px] font-black uppercase tracking-[0.3em] italic">Live Intelligence for Industrial Compliance</span>
+            <h4 className="text-emerald-500 text-[11px] font-black uppercase tracking-[0.5em] mb-4 italic">{t('legal.vaultTitle')}</h4>
+            <span className="text-white/30 text-[10px] font-black uppercase tracking-[0.3em] italic">{t('legal.vaultSub')}</span>
           </div>
           <div className="flex gap-6">
-            <div className="w-80 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center px-8 text-[11px] font-black text-white/20 italic tracking-widest uppercase">Search law or clause...</div>
+            <div className="w-80 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center px-8 text-[11px] font-black text-white/20 italic tracking-widest uppercase">{t('legal.search')}</div>
             <div className="px-8 py-5 bg-emerald-500 rounded-2xl text-[10px] font-black text-white shadow-2xl shadow-emerald-500/30 flex items-center gap-4 hover:scale-105 transition-transform uppercase italic">
-              <Download className="w-5 h-5" /> EXPORT COMPLIANCE LEDGER
+              <Download className="w-5 h-5" /> {t('legal.export')}
             </div>
           </div>
         </div>
@@ -1014,7 +991,7 @@ function LegalRegisterDashboard() {
               <div className="flex items-center gap-10 shrink-0">
                 <div className={`px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] italic border
                   ${l.compliance === 'FULL' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' : 'bg-orange-500/10 text-orange-400 border-orange-500/20'}`}>
-                  {l.compliance} STATUS
+                  {l.compliance} {t('legal.status')}
                 </div>
                 <button className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 hover:bg-emerald-500 group/btn transition-all shadow-2xl">
                   <ArrowRight className="w-6 h-6 text-white/20 group-hover/btn:text-white transition-colors" />
@@ -1029,13 +1006,14 @@ function LegalRegisterDashboard() {
 }
 
 function SecurityStats() {
+  const { t } = useLanguage();
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
       {[
-        { title: "RLS Matrix", desc: "Global enforcement of Row-Level Security across all 12 edge nodes.", icon: <ShieldAlert className="w-10 h-10 text-emerald-500" /> },
-        { title: "Operator Hub", desc: "Real-time personnel monitoring and multi-factor session validation.", icon: <User className="w-10 h-10 text-blue-500" /> },
-        { title: "99.9% Uptime", desc: "Tier-4 infrastructure integrity with zero-downtime ledger failover.", icon: <Server className="w-10 h-10 text-emerald-500" /> },
-        { title: "Quantum-Safe", desc: "TLS 1.3 hybrid encryption for all telemetry and document streams.", icon: <Lock className="w-10 h-10 text-blue-500" /> }
+        { title: t('security.stats.rls'), desc: t('security.stats.rlsDesc'), icon: <ShieldAlert className="w-10 h-10 text-emerald-500" /> },
+        { title: t('security.stats.hub'), desc: t('security.stats.hubDesc'), icon: <User className="w-10 h-10 text-blue-500" /> },
+        { title: t('security.stats.uptime'), desc: t('security.stats.uptimeDesc'), icon: <Server className="w-10 h-10 text-emerald-500" /> },
+        { title: t('security.stats.quantum'), desc: t('security.stats.quantumDesc'), icon: <Lock className="w-10 h-10 text-blue-500" /> }
       ].map((s, i) => (
         <div key={i} className="glass-panel p-10 rounded-[3rem] text-left group hover:border-emerald-500/30 transition-all relative overflow-hidden">
           <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-20 transition-all">{s.icon}</div>
@@ -1051,6 +1029,7 @@ function SecurityStats() {
 }
 
 function SecurityDashboard() {
+  const { t } = useLanguage();
   return (
     <div className="w-full">
       <div className="glass-panel rounded-[4rem] p-12 md:p-20 relative overflow-hidden border border-white/5">
@@ -1062,16 +1041,16 @@ function SecurityDashboard() {
               <ShieldAlert className="w-16 h-16 drop-shadow-[0_0_20px_rgba(16,185,129,0.5)]" />
             </div>
             <div>
-              <h4 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-6 text-white uppercase">Advanced <br /><span className="text-emerald-500">Audit Ledger</span></h4>
-              <p className="text-xs font-black text-white/30 uppercase tracking-[0.6em] italic">Precision Non-Repudiation Architecture</p>
+              <h4 className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none mb-6 text-white uppercase">{t('security.title')} <br /><span className="text-emerald-500">{t('security.subtitle')}</span></h4>
+              <p className="text-xs font-black text-white/30 uppercase tracking-[0.6em] italic">{t('security.badge')}</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-8">
             <div className="px-10 py-6 bg-emerald-500 rounded-3xl text-sm font-black text-white shadow-2xl shadow-emerald-500/30 flex items-center gap-6 italic uppercase tracking-widest">
-              <div className="w-4 h-4 bg-white rounded-full animate-pulse shadow-[0_0_15px_white]"></div> SYSTEMS NOMINAL
+              <div className="w-4 h-4 bg-white rounded-full animate-pulse shadow-[0_0_15px_white]"></div> {t('security.nominal')}
             </div>
             <div className="px-10 py-6 bg-white/5 border border-white/10 rounded-3xl text-xs font-black text-white/40 uppercase tracking-[0.4em] italic flex items-center gap-4">
-              <Zap className="w-5 h-5" /> 12MS LATENCY
+              <Zap className="w-5 h-5" /> {t('security.latency')}
             </div>
           </div>
         </div>
@@ -1080,7 +1059,7 @@ function SecurityDashboard() {
           <table className="w-full border-separate border-spacing-y-4">
             <thead>
               <tr className="text-left">
-                {['Event Horizon', 'Audit Protocol', 'Entity Context', 'Principal Actor', 'Integrity'].map(h => (
+                {[t('security.table.time'), t('security.table.protocol'), t('security.table.context'), t('security.table.actor'), t('security.table.integrity')].map(h => (
                   <th key={h} className="pb-4 sm:pb-8 px-4 sm:px-12 text-[10px] sm:text-xs font-black text-white/20 uppercase tracking-[0.4em] sm:tracking-[0.6em] italic whitespace-nowrap">{h}</th>
                 ))}
               </tr>
@@ -1102,7 +1081,7 @@ function SecurityDashboard() {
                   <td className="py-6 sm:py-10 px-4 sm:px-12 bg-white/2 rounded-r-2xl sm:rounded-r-[2.5rem] text-[8px] sm:text-[10px] font-black text-emerald-500 italic tracking-[0.2em] sm:tracking-[0.4em] uppercase whitespace-nowrap">
                     <div className="flex items-center gap-2 sm:gap-6">
                       <ShieldCheck className="w-5 h-5 sm:w-8 sm:h-8 shadow-[0_0_15px_rgba(16,185,129,0.5)] shrink-0" />
-                      <span className="group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-transform">SHA-256 VALID</span>
+                      <span className="group-hover:translate-x-1 sm:group-hover:translate-x-2 transition-transform">{t('security.statusValid')}</span>
                     </div>
                   </td>
                 </tr>
@@ -1115,143 +1094,63 @@ function SecurityDashboard() {
   )
 }
 
-function TechnicalVisual({ type }: { type: string }) {
-  if (type === 'amdal') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <AmdalManagement />
-        </div>
-      </div>
-    )
-  }
+function TechnicalVisual({ activeModule }: { activeModule: string }) {
+  const { t } = useLanguage();
+  
+  const renderDashboard = () => {
+    switch (activeModule) {
+      case 'dashboard': return <CommandCenterDashboard t={t} />;
+      case 'compliance': return <ComplianceDashboard />;
+      case 'amdal': return <AmdalManagement />;
+      case 'ghg': return <GHGAccountingDashboard />;
+      case 'wastewater': return <WastewaterDashboard />;
+      case 'waste': return <B3WasteManagement />;
+      case 'iso': return <ISO14001Dashboard />;
+      case 'domestic': return <DomesticWasteDashboard />;
+      case 'proper': return <ProperDashboard />;
+      case 'intelligence': return <ESGIntelligenceDashboard />;
+      case 'esg': return <ESGIntelligenceDashboard />;
+      case 'legal': return <LegalRegisterDashboard />;
+      case 'security': return <SecurityDashboard />;
+      default: return (
+        <div className="w-full h-full flex flex-col justify-center items-center p-8 sm:p-20 text-center">
+            <div className="mb-12 inline-block">
+              <div className="px-6 py-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[10px] font-black text-emerald-500 uppercase tracking-[0.4em] italic mb-6 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                {t(`modules.${activeModule}.badge`)}
+              </div>
+              <h2 className="text-6xl sm:text-8xl font-black italic uppercase tracking-tighter text-white leading-none">
+                {t(`modules.${activeModule}.title`)} <span className="text-emerald-500">{t(`modules.${activeModule}.subtitle`)}</span>
+              </h2>
+            </div>
+            
+            <p className="text-lg sm:text-xl text-slate-400 font-light leading-relaxed max-w-3xl mx-auto italic mb-16">
+              {t(`modules.${activeModule}.descLong`)}
+            </p>
 
-  if (type === 'dashboard') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <CommandCenterDashboard />
+            <div className="detail-cards-container flex justify-center gap-6">
+              {[1, 2, 3].map((i) => (
+                 <div key={i} className="px-8 py-5 rounded-2xl bg-white/5 border border-white/10 text-[10px] font-black text-white/40 uppercase tracking-[0.3em] italic">
+                   {t(`modules.${activeModule}.details.${i-1}`)}
+                 </div>
+              ))}
+            </div>
         </div>
-      </div>
-    )
-  }
-
-  if (type === 'compliance') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <ComplianceDashboard />
-        </div>
-      </div>
-    )
-  }
-
-  if (type === 'wastewater') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <WastewaterDashboard />
-        </div>
-      </div>
-    )
-  }
-
-  if (type === 'ghg') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <GHGAccountingDashboard />
-        </div>
-      </div>
-    )
-  }
-
-  if (type === 'waste') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <B3WasteManagement />
-        </div>
-      </div>
-    )
-  }
-
-  if (type === 'iso') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <ISO14001Dashboard />
-        </div>
-      </div>
-    )
-  }
-
-  if (type === 'proper') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <ProperDashboard />
-        </div>
-      </div>
-    )
-  }
-
-  if (type === 'esg') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <ESGIntelligenceDashboard />
-        </div>
-      </div>
-    )
-  }
-
-  if (type === 'legal') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <LegalRegisterDashboard />
-        </div>
-      </div>
-    )
-  }
-
-  if (type === 'security') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <SecurityDashboard />
-        </div>
-      </div>
-    )
-  }
-
-  if (type === 'domestic') {
-    return (
-      <div className="technical-blueprint-container dash-mode">
-        <div className="dash-wrapper relative z-10 w-full h-full p-12">
-          <DomesticWasteDashboard />
-        </div>
-      </div>
-    )
-  }
+      );
+    }
+  };
 
   return (
-    <div className="technical-blueprint-container">
-      <div className="grid-overlay"></div>
-      <div className="blueprint-content">
-        <svg viewBox="0 0 400 400" className="blueprint-svg">
-          <circle cx="200" cy="200" r="150" className="outer-ring" />
-          <circle cx="200" cy="200" r="120" className="inner-ring" />
-          <path d="M 200 50 L 200 350 M 50 200 L 350 200" className="crosshair" />
-          <rect x="100" y="100" width="200" height="200" rx="20" className="blueprint-rect" />
-        </svg>
+    <div className="technical-blueprint-container dash-mode relative w-full h-full overflow-hidden">
+      <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-3xl"></div>
+      <div className="dash-wrapper relative z-10 w-full h-full p-6 sm:p-12 overflow-y-auto custom-scrollbar">
+        {renderDashboard()}
       </div>
     </div>
-  )
+  );
 }
 
 export default function LandingPage() {
+  const { language, setLanguage, t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [activeTab, setActiveTab] = useState("dashboard")
 
@@ -1260,154 +1159,154 @@ export default function LandingPage() {
     {
       id: "amdal",
       icon: <ShieldCheck className="w-8 h-8" />,
-      title: "AMDAL Mgmt",
-      subtitle: "Advisory & RKL-RPL",
-      desc: "Comprehensive AMDAL lifecycle management. Real-time RKL-RPL status monitoring with automated semester reporting cycles and regulatory advisory engine.",
+      title: t('modules.amdal.title'),
+      subtitle: t('modules.amdal.subtitle'),
+      desc: t('modules.amdal.descLong'),
       details: [
-        { label: "AMDAL Advisory", icon: <FileSearch className="w-4 h-4" /> },
-        { label: "RKL-RPL Cycle", icon: <RefreshCw className="w-4 h-4" /> },
-        { label: "Approval Logic", icon: <CheckCircle2 className="w-4 h-4" /> },
+        { label: t('modules.amdal.details.0'), icon: <FileSearch className="w-4 h-4" /> },
+        { label: t('modules.amdal.details.1'), icon: <RefreshCw className="w-4 h-4" /> },
+        { label: t('modules.amdal.details.2'), icon: <CheckCircle2 className="w-4 h-4" /> },
       ]
     },
     {
       id: "wastewater",
       icon: <Droplets className="w-8 h-8" />,
-      title: "Discharge",
-      subtitle: "PP 22/2021 Precision",
-      desc: "Mission-critical wastewater monitoring integrated with SPARING hardware. Real-time telemetry for pH, COD, and TSS thresholds with automated violation prevention and daily logging.",
+      title: t('modules.wastewater.title'),
+      subtitle: t('modules.wastewater.subtitle'),
+      desc: t('modules.wastewater.descLong'),
       details: [
-        { label: "Hardware Sync", icon: <Database className="w-4 h-4" /> },
-        { label: "Limit Guards", icon: <Shield className="w-4 h-4" /> },
-        { label: "BMAL Audit", icon: <FileText className="w-4 h-4" /> },
-        { label: "Action Tracker", icon: <Activity className="w-4 h-4" /> }
+        { label: t('modules.wastewater.details.0'), icon: <Database className="w-4 h-4" /> },
+        { label: t('modules.wastewater.details.1'), icon: <Shield className="w-4 h-4" /> },
+        { label: t('modules.wastewater.details.2'), icon: <FileText className="w-4 h-4" /> },
+        { label: t('modules.wastewater.details.3'), icon: <Activity className="w-4 h-4" /> }
       ]
     },
     {
       id: "ghg",
       icon: <Globe2 className="w-8 h-8" />,
-      title: "GHG Accounting",
-      subtitle: "SRN PPI Protocol",
-      desc: "Greenhouse Gas inventory and carbon footprint tracking based on Scope 1, 2, and 3. Fully compliant with SIGN SMART and SRN PPI reporting frameworks for global transparency.",
+      title: t('modules.ghg.title'),
+      subtitle: t('modules.ghg.subtitle'),
+      desc: t('modules.ghg.descLong'),
       details: [
-        { label: "Scope Breakdown", icon: <Layers className="w-4 h-4" /> },
-        { label: "SRN PPI Limit", icon: <AlertCircle className="w-4 h-4" /> },
-        { label: "Emission Heatmap", icon: <Activity className="w-4 h-4" /> },
-        { label: "Net Zero Path", icon: <TrendingUp className="w-4 h-4" /> }
+        { label: t('modules.ghg.details.0'), icon: <Layers className="w-4 h-4" /> },
+        { label: t('modules.ghg.details.1'), icon: <AlertCircle className="w-4 h-4" /> },
+        { label: t('modules.ghg.details.2'), icon: <Activity className="w-4 h-4" /> },
+        { label: t('modules.ghg.details.3'), icon: <TrendingUp className="w-4 h-4" /> }
       ]
     },
     {
       id: "waste",
       icon: <Package className="w-8 h-8" />,
-      title: "B3 Waste",
-      subtitle: "Festronik Digital Chain",
-      desc: "End-to-end hazardous waste manifest lifecycle. Seamless Festronik integration ensuring 100% accountability from generation to final disposal with 90/180-day storage alerts.",
+      title: t('modules.waste.title'),
+      subtitle: t('modules.waste.subtitle'),
+      desc: t('modules.waste.descLong'),
       details: [
-        { label: "Festronik Sync", icon: <Zap className="w-4 h-4" /> },
-        { label: "Storage Guard", icon: <Calendar className="w-4 h-4" /> },
-        { label: "Neraca Limbah B3", icon: <FileText className="w-4 h-4" /> },
-        { label: "Manifest Tracker", icon: <CheckCircle2 className="w-4 h-4" /> }
+        { label: t('modules.waste.details.0'), icon: <Zap className="w-4 h-4" /> },
+        { label: t('modules.waste.details.1'), icon: <Calendar className="w-4 h-4" /> },
+        { label: t('modules.waste.details.2'), icon: <FileText className="w-4 h-4" /> },
+        { label: t('modules.waste.details.3'), icon: <CheckCircle2 className="w-4 h-4" /> }
       ]
     },
     {
       id: "iso",
       icon: <Trophy className="w-8 h-8" />,
-      title: "ISO 14001",
-      subtitle: "Digital EMS Core",
-      desc: "Digitized ISO 14001:2015 Management System. Full lifecycle mapping for Clause 6.1 (Aspects/Impacts), Clause 9.1 (Monitoring), and Clause 10.2 (CAPA engine).",
+      title: t('modules.iso.title'),
+      subtitle: t('modules.iso.subtitle'),
+      desc: t('modules.iso.descLong'),
       details: [
-        { label: "Clause 6.1 Matrix", icon: <Layers className="w-4 h-4" /> },
-        { label: "Clause 10.2 CAPA", icon: <CheckCircle2 className="w-4 h-4" /> },
-        { label: "Audit Readiness", icon: <ArrowRight className="w-4 h-4" /> },
-        { label: "Digital Legality", icon: <Scale className="w-4 h-4" /> }
+        { label: t('modules.iso.details.0'), icon: <Layers className="w-4 h-4" /> },
+        { label: t('modules.iso.details.1'), icon: <CheckCircle2 className="w-4 h-4" /> },
+        { label: t('modules.iso.details.2'), icon: <ArrowRight className="w-4 h-4" /> },
+        { label: t('modules.iso.details.3'), icon: <Scale className="w-4 h-4" /> }
       ]
     },
     {
       id: "proper",
       icon: <Zap className="w-8 h-8" />,
-      title: "PROPER",
-      subtitle: "Predictive Scaling",
-      desc: "Forecast Indonesian MOE PROPER ratings with AI-driven gap analysis. Drive your organization from compliance toward Green and Gold ratings with beyond-compliance tracking.",
+      title: t('modules.proper.title'),
+      subtitle: t('modules.proper.subtitle'),
+      desc: t('modules.proper.descLong'),
       details: [
-        { label: "SROI Community Log", icon: <Users className="w-4 h-4" /> },
-        { label: "Gap Analysis AI", icon: <Activity className="w-4 h-4" /> },
-        { label: "Rating Probability", icon: <BarChart3 className="w-4 h-4" /> },
-        { label: "Criteria Mapping", icon: <FileText className="w-4 h-4" /> }
+        { label: t('modules.proper.details.0'), icon: <Users className="w-4 h-4" /> },
+        { label: t('modules.proper.details.1'), icon: <Activity className="w-4 h-4" /> },
+        { label: t('modules.proper.details.2'), icon: <BarChart3 className="w-4 h-4" /> },
+        { label: t('modules.proper.details.3'), icon: <FileText className="w-4 h-4" /> }
       ]
     },
     {
       id: "security",
       icon: <ShieldCheck className="w-8 h-8" />,
-      title: "Security",
-      subtitle: "Unified RBAC Protocol",
-      desc: "Military-grade non-repudiation logging. Advanced Role-Based Access Control ensuring Specialists, Auditors, and Admins operate within strict data-level security policies.",
+      title: t('modules.security.title'),
+      subtitle: t('modules.security.subtitle'),
+      desc: t('modules.security.descLong'),
       details: [
-        { label: "Better-Auth Multi-MFA", icon: <Lock className="w-4 h-4" /> },
-        { label: "Immutable Audit Trail", icon: <FileSearch className="w-4 h-4" /> },
-        { label: "Data Integrity", icon: <ShieldCheck className="w-4 h-4" /> },
-        { label: "Tenant Isolation", icon: <Layers className="w-4 h-4" /> }
+        { label: t('modules.security.details.0'), icon: <Lock className="w-4 h-4" /> },
+        { label: t('modules.security.details.1'), icon: <FileSearch className="w-4 h-4" /> },
+        { label: t('modules.security.details.2'), icon: <ShieldCheck className="w-4 h-4" /> },
+        { label: t('modules.security.details.3'), icon: <Layers className="w-4 h-4" /> }
       ]
     },
     {
       id: "dashboard",
       icon: <LayoutDashboard className="w-8 h-8" />,
-      title: "Command Center",
-      subtitle: "Enterprise Performance",
-      desc: "Unified ESG intelligence hub. Synthesizing real-time telemetry into a single definitive health score for GLOBAL OPERATIONS.",
+      title: t('modules.compliance.title'),
+      subtitle: t('modules.compliance.subtitle'),
+      desc: t('modules.compliance.descLong'),
       details: [
-        { label: "Impact Score", icon: <Activity className="w-4 h-4" /> },
-        { label: "Real-time Feed", icon: <Zap className="w-4 h-4" /> },
-        { label: "Global Sync", icon: <Globe2 className="w-4 h-4" /> }
+        { label: t('modules.compliance.details.0'), icon: <Activity className="w-4 h-4" /> },
+        { label: t('modules.compliance.details.1'), icon: <Zap className="w-4 h-4" /> },
+        { label: t('modules.compliance.details.2'), icon: <Globe2 className="w-4 h-4" /> }
       ]
     },
     {
       id: "compliance",
       icon: <ClipboardCheck className="w-8 h-8" />,
-      title: "Compliance",
-      subtitle: "Regulatory Reporting",
-      desc: "Digitized reporting workflow precision-aligned with KLHK SIMPEL requirements. Direct API synchronization with government portals for seamless compliance.",
+      title: t('modules.compliance.title'),
+      subtitle: t('modules.compliance.subtitle'),
+      desc: t('modules.compliance.descLong'),
       details: [
-        { label: "SIMPEL Sync", icon: <Zap className="w-4 h-4" /> },
-        { label: "Submission Hub", icon: <FileText className="w-4 h-4" /> },
-        { label: "History Log", icon: <ClipboardCheck className="w-4 h-4" /> }
+        { label: t('modules.compliance.details.0'), icon: <Zap className="w-4 h-4" /> },
+        { label: t('modules.compliance.details.1'), icon: <FileText className="w-4 h-4" /> },
+        { label: t('modules.compliance.details.2'), icon: <ClipboardCheck className="w-4 h-4" /> }
       ]
     },
     {
       id: "esg",
       icon: <BarChart3 className="w-8 h-8" />,
-      title: "ESG Intelligence",
-      subtitle: "Performance Engine",
-      desc: "Sophisticated data indexing and net-zero progression maps. Advanced AI engine analyzing disclosure metrics against global standards (GRI, SASB, TCFD).",
+      title: t('modules.intelligence.title'),
+      subtitle: t('modules.intelligence.subtitle'),
+      desc: t('modules.intelligence.descLong'),
       details: [
-        { label: "Net Zero Path", icon: <TrendingUp className="w-4 h-4" /> },
-        { label: "Maturity Curve", icon: <Activity className="w-4 h-4" /> },
-        { label: "AI Benchmarking", icon: <Zap className="w-4 h-4" /> }
+        { label: t('modules.intelligence.details.0'), icon: <TrendingUp className="w-4 h-4" /> },
+        { label: t('modules.intelligence.details.1'), icon: <Activity className="w-4 h-4" /> },
+        { label: t('modules.intelligence.details.2'), icon: <Zap className="w-4 h-4" /> }
       ]
     },
     {
       id: "legal",
       icon: <Scale className="w-8 h-8" />,
-      title: "Legal Register",
-      subtitle: "Regulatory Vault",
-      desc: "Interactive regulatory vaults and compliance implementation tracking. Automated law-monitoring services ensuring zero regulatory breaches.",
+      title: t('modules.legal.title'),
+      subtitle: t('modules.legal.subtitle'),
+      desc: t('modules.legal.descLong'),
       details: [
-        { label: "Regulation Vault", icon: <Building2 className="w-4 h-4" /> },
-        { label: "Mandate Tracker", icon: <CheckCircle2 className="w-4 h-4" /> },
-        { label: "Implementation Gap", icon: <AlertCircle className="w-4 h-4" /> }
+        { label: t('modules.legal.details.0'), icon: <Building2 className="w-4 h-4" /> },
+        { label: t('modules.legal.details.1'), icon: <CheckCircle2 className="w-4 h-4" /> },
+        { label: t('modules.legal.details.2'), icon: <AlertCircle className="w-4 h-4" /> }
       ]
     },
     {
       id: "domestic",
       icon: <Trash2 className="w-8 h-8" />,
-      title: "Domestic Waste",
-      subtitle: "Circular Economy",
-      desc: "Non-B3 and domestic waste management tracking with a focus on circular economy and recycling efficiency metrics.",
+      title: t('modules.domestic.title'),
+      subtitle: t('modules.domestic.subtitle'),
+      desc: t('modules.domestic.descLong'),
       details: [
-        { label: "Recycling Rate", icon: <RefreshCw className="w-4 h-4" /> },
-        { label: "Stream Split", icon: <Layers className="w-4 h-4" /> },
-        { label: "Segregation Log", icon: <CheckCircle2 className="w-4 h-4" /> }
+        { label: t('modules.domestic.details.0'), icon: <RefreshCw className="w-4 h-4" /> },
+        { label: t('modules.domestic.details.1'), icon: <Layers className="w-4 h-4" /> },
+        { label: t('modules.domestic.details.2'), icon: <CheckCircle2 className="w-4 h-4" /> }
       ]
     }
-  ], [])
+  ], [t])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -1439,16 +1338,32 @@ export default function LandingPage() {
 
           <div className="hidden lg:flex items-center">
             <div className="floating-nav-card bg-slate-900/50 backdrop-blur-xl border border-white/5 px-8 py-3 rounded-full flex gap-10">
-              <a href="#ecosystem" className="nav-link text-xs">Platform</a>
-              <a href="#features" className="nav-link text-xs">Fitur</a>
-              <a href="#architecture" className="nav-link text-xs">Arsitektur</a>
-              <a href="#security" className="nav-link text-xs">Keamanan</a>
+              <a href="#ecosystem" className="nav-link text-xs">{t('nav.platform')}</a>
+              <a href="#features" className="nav-link text-xs">{t('nav.features')}</a>
+              <a href="#architecture" className="nav-link text-xs">{t('nav.architecture')}</a>
+              <a href="#security" className="nav-link text-xs">{t('nav.security')}</a>
+            </div>
+            
+            {/* Language Toggle */}
+            <div className="flex items-center bg-white/5 border border-white/10 rounded-full p-1 ml-6">
+              <button 
+                onClick={() => setLanguage('id')}
+                className={`px-3 py-1 rounded-full text-[9px] font-black transition-all ${language === 'id' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/20' : 'text-slate-500 hover:text-white'}`}
+              >
+                ID
+              </button>
+              <button 
+                onClick={() => setLanguage('en')}
+                className={`px-3 py-1 rounded-full text-[9px] font-black transition-all ${language === 'en' ? 'bg-emerald-600 text-white shadow-lg shadow-emerald-600/20' : 'text-slate-500 hover:text-white'}`}
+              >
+                EN
+              </button>
             </div>
           </div>
 
           <Link href="https://eco-compliant-os.vercel.app/dashboard">
             <button className="px-8 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-black tracking-widest uppercase transition-all shadow-xl shadow-emerald-500/20">
-              Live Demo
+              {t('nav.demo')}
             </button>
           </Link>
         </div>
@@ -1463,22 +1378,22 @@ export default function LandingPage() {
           <div className="max-w-6xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-emerald-500/5 border border-emerald-500/10 text-emerald-400 text-[10px] font-black tracking-[0.3em] uppercase mb-12 reveal-on-scroll">
               <Zap className="w-4 h-4" />
-              <span>The Next Era of Industrial OS</span>
+              <span>{t('hero.badge')}</span>
             </div>
 
             <h1 className="hero-title text-7xl md:text-[10rem] font-black mb-12 leading-[0.85] reveal-on-scroll" style={{ transitionDelay: '0.1s' }}>
-              ERADICATE <br />
-              <span className="hero-gradient-text uppercase italic">COMPLEXITY.</span>
+              {t('hero.title')} <br />
+              <span className="hero-gradient-text uppercase italic">{t('hero.subtitle')}</span>
             </h1>
 
             <p className="text-xl md:text-3xl text-slate-400 mb-20 max-w-4xl mx-auto leading-relaxed font-light reveal-on-scroll" style={{ transitionDelay: '0.2s' }}>
-              A high-performance operating system engineered for <span className="text-white font-bold">high-stakes industrial compliance</span>. Seamlessly merging technical depth with elegant automation.
+              {t('hero.desc')}
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8 reveal-on-scroll" style={{ transitionDelay: '0.3s' }}>
               <Link href="https://eco-compliant-os.vercel.app/dashboard">
                 <button className="cta-button px-16 py-8 rounded-3xl text-white font-black text-2xl flex items-center gap-4 transition-all">
-                  Launch Command Center
+                  {t('hero.launch')}
                   <ChevronRight className="w-8 h-8" />
                 </button>
               </Link>
@@ -1499,8 +1414,8 @@ export default function LandingPage() {
         <div className="w-full px-8 md:px-12">
           <div className="max-w-7xl mx-auto mb-16 flex items-end justify-between reveal-on-scroll">
             <div>
-              <h4 className="text-emerald-500 font-black tracking-[0.5em] uppercase mb-6 text-xs italic">Integrated Ecosystem</h4>
-              <h2 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter text-white leading-none">Module <span className="text-emerald-500">Theater.</span></h2>
+              <h4 className="text-emerald-500 font-black tracking-[0.5em] uppercase mb-6 text-xs italic">{t('modules.integratedBadge')}</h4>
+              <h2 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter text-white leading-none">{t('modules.title')} <span className="text-emerald-500">{t('modules.subtitle')}</span></h2>
             </div>
 
             <div className="flex gap-4 mb-4">
@@ -1561,7 +1476,7 @@ export default function LandingPage() {
 
                 <div className="theater-visual-panel">
                   {activeTab === mod.id && (
-                    <TechnicalVisual type={mod.id} />
+                    <TechnicalVisual activeModule={mod.id} />
                   )}
                 </div>
               </div>
@@ -1585,7 +1500,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-32 items-center">
             <div className="reveal-on-scroll">
-              <h2 className="text-6xl md:text-8xl font-black mb-10 uppercase tracking-tighter italic text-white leading-none">God-Tier <br /> <span className="text-emerald-500">Golden Stack.</span></h2>
+              <h2 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter text-white leading-none">God-Tier <br /> <span className="text-emerald-500">Golden Stack.</span></h2>
               <p className="text-2xl text-slate-400 font-light mb-12 leading-relaxed">Built for elite scalability and 100% data integrity. Our infrastructure eliminates traditional client-side bottlenecks.</p>
 
               <div className="space-y-6">
@@ -1645,14 +1560,14 @@ export default function LandingPage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "PROPER Scoring", desc: "Automated rating prediction based on real-time regulatory algorithms.", icon: <Trophy className="w-6 h-6" />, tag: "RegTech" },
-              { title: "Brevo Alerts", desc: "Automated email reminders for RKL-RPL dates and manifest deadlines.", icon: <Bell className="w-6 h-6" />, tag: "Automation" },
-              { title: "Compliance Agenda", desc: "Interactive calendar integration for all environmental milestones.", icon: <Calendar className="w-6 h-6" />, tag: "Planning" },
-              { title: "ISO Clause Mapping", desc: "Digital implementation of Clause 6.1, 9.1, and 10.2 requirements.", icon: <ClipboardCheck className="w-6 h-6" />, tag: "Standards" },
-              { title: "Digital Manifests", desc: "90/180-day hazardous waste lifecycle guards and Festronik sync.", icon: <Database className="w-6 h-6" />, tag: "Logistics" },
-              { title: "GRI 11 Alignment", desc: "Standardized ESG disclosure engine for multi-sector reporting.", icon: <BarChart3 className="w-6 h-6" />, tag: "ESG" },
-              { title: "GHG Accounting", desc: "Full Scope 1, 2, and 3 carbon tracking with built-in factors.", icon: <Globe2 className="w-6 h-6" />, tag: "Carbon" },
-              { title: "IoT Telemetry", desc: "Direct SPARING/KLHK integration for water and air sensors.", icon: <Zap className="w-6 h-6" />, tag: "Real-time" }
+              { title: t('features.properScoring.title'), desc: t('features.properScoring.desc'), icon: <Trophy className="w-6 h-6" />, tag: "RegTech" },
+              { title: t('features.brevoAlerts.title'), desc: t('features.brevoAlerts.desc'), icon: <Bell className="w-6 h-6" />, tag: "Automation" },
+              { title: t('features.complianceAgenda.title'), desc: t('features.complianceAgenda.desc'), icon: <Calendar className="w-6 h-6" />, tag: "Planning" },
+              { title: t('features.isoMapping.title'), desc: t('features.isoMapping.desc'), icon: <ClipboardCheck className="w-6 h-6" />, tag: "Standards" },
+              { title: t('features.digitalManifests.title'), desc: t('features.digitalManifests.desc'), icon: <Database className="w-6 h-6" />, tag: "Logistics" },
+              { title: t('features.griAlignment.title'), desc: t('features.griAlignment.desc'), icon: <BarChart3 className="w-6 h-6" />, tag: "ESG" },
+              { title: t('features.ghgAccounting.title'), desc: t('features.ghgAccounting.desc'), icon: <Globe2 className="w-6 h-6" />, tag: "Carbon" },
+              { title: t('features.iotTelemetry.title'), desc: t('features.iotTelemetry.desc'), icon: <Zap className="w-6 h-6" />, tag: "Real-time" }
             ].map((f, i) => (
               <div key={i} className="feature-card-premium group reveal-on-scroll" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="p-10 h-full rounded-[2.5rem] bg-slate-900 border border-white/5 hover:border-emerald-500/50 transition-all duration-500 relative overflow-hidden text-left">
@@ -1714,13 +1629,13 @@ export default function LandingPage() {
       <section className="py-64 relative text-center bg-slate-950 overflow-hidden">
         <div className="orb orb-emerald opacity-20"></div>
         <div className="container mx-auto px-6 relative z-10 reveal-on-scroll">
-          <h2 className="text-8xl md:text-[12rem] font-black mb-16 italic uppercase tracking-tighter text-white leading-none">THE NEXT <br /><span className="text-emerald-500">STANDARD.</span></h2>
+          <h2 className="text-8xl md:text-[12rem] font-black mb-16 italic uppercase tracking-tighter text-white leading-none">{t('cta.title')} <br /><span className="text-emerald-500">{t('cta.subtitle')}</span></h2>
           <p className="text-2xl md:text-4xl text-slate-400 mb-20 max-w-4xl mx-auto font-light leading-relaxed">
-            Transition from legacy environmental logging to a high-performance, predictive operating system.
+            {t('cta.desc')}
           </p>
           <Link href="https://eco-compliant-os.vercel.app/dashboard">
             <button className="cta-button px-24 py-10 rounded-3xl font-black text-4xl text-white transition-all shadow-2xl shadow-emerald-500/20">
-              Enter The Ecosystem
+              {t('cta.button')}
             </button>
           </Link>
 
@@ -1741,16 +1656,16 @@ export default function LandingPage() {
             </div>
             <div className="flex flex-col">
               <span className="text-3xl font-black tracking-tighter text-white uppercase italic">EcoCompliant</span>
-              <span className="text-xs font-black text-emerald-500 tracking-[0.4em] uppercase">Operating System</span>
+              <span className="text-xs font-black text-emerald-500 tracking-[0.4em] uppercase">{t('nav.platform')}</span>
             </div>
           </div>
 
           <div className="text-center md:text-right">
-            <div className="text-sm font-black text-white italic uppercase tracking-[0.3em] mb-4">Precision-Engineered Compliance</div>
+            <div className="text-sm font-black text-white italic uppercase tracking-[0.3em] mb-4">{t('footer.tagline')}</div>
             <div className="text-xs font-mono text-slate-600 uppercase tracking-widest flex items-center justify-center md:justify-end gap-6">
-              <span>© 2026 ADEBASIR ENTERPRISE</span>
+              <span>{t('footer.copyright')}</span>
               <span className="w-2 h-2 bg-slate-800 rounded-full"></span>
-              <span>All Systems Nominal</span>
+              <span>{t('footer.allSystemsNominal')}</span>
             </div>
           </div>
         </div>

@@ -1,0 +1,454 @@
+{
+  "nav": {
+    "dashboard": "DASHBOARD",
+    "compliance": "COMPLIANCE",
+    "amdal": "AMDAL",
+    "ghg": "GHG",
+    "wastewater": "WASTEWATER",
+    "waste": "B3 WASTE",
+    "iso": "ISO 14001",
+    "proper": "PROPER",
+    "login": "LOGIN",
+    "getStarted": "GET STARTED",
+    "platform": "Platform",
+    "features": "Features",
+    "architecture": "Architecture",
+    "security": "Security",
+    "demo": "Live Demo"
+  },
+  "features": {
+    "properScoring": {
+      "title": "PROPER Scoring",
+      "desc": "Automated rating prediction based on real-time regulatory algorithms."
+    },
+    "brevoAlerts": {
+      "title": "Brevo Alerts",
+      "desc": "Automated email reminders for RKL-RPL dates and manifest deadlines."
+    },
+    "complianceAgenda": {
+      "title": "Compliance Agenda",
+      "desc": "Interactive calendar integration for all environmental milestones."
+    },
+    "isoMapping": {
+      "title": "ISO Clause Mapping",
+      "desc": "Digital implementation of Clause 6.1, 9.1, and 10.2 requirements."
+    },
+    "digitalManifests": {
+      "title": "Digital Manifests",
+      "desc": "90/180-day hazardous waste lifecycle guards and Festronik sync."
+    },
+    "griAlignment": {
+      "title": "GRI 11 Alignment",
+      "desc": "Standardized ESG disclosure engine for multi-sector reporting."
+    },
+    "ghgAccounting": {
+      "title": "GHG Accounting",
+      "desc": "Full Scope 1, 2, and 3 carbon tracking with built-in factors."
+    },
+    "iotTelemetry": {
+      "title": "IoT Telemetry",
+      "desc": "Direct SPARING/KLHK integration for water and air sensors."
+    }
+  },
+  "hero": {
+    "badge": "The Next Era of Industrial OS",
+    "title": "ERADICATE",
+    "subtitle": "COMPLEXITY.",
+    "desc": "A high-performance operating system engineered for high-stakes industrial compliance. Seamlessly merging technical depth with elegant automation.",
+    "dashboardBadge": "ENTERPRISE PERFORMANCE INDEX",
+    "dashboardDesc": "Unified ESG intelligence hub. Synthesizing real-time telemetry into a single definitive health score for GLOBAL OPERATIONS.",
+    "healthScore": "HEALTH SCORE",
+    "launch": "Launch Command Center"
+  },
+  "stats": {
+    "esg": "ESG PORTFOLIO",
+    "carbon": "CARBON FOOTPRINT",
+    "circularity": "CIRCULARITY",
+    "water": "WATER QUALITY",
+    "proper": "PROPER RATING",
+    "iso": "ISO 14001:2015",
+    "amdal": "AMDAL MILESTONES",
+    "audit": "AUDIT REGISTRY",
+    "maturity": "Initial Maturity"
+  },
+  "dashboard": {
+    "title": "Command Center",
+    "subtitle": "Enterprise Performance",
+    "healthTitle": "Impact Score",
+    "realtime": "Real-time Feed",
+    "globalSync": "Global Sync"
+  },
+  "compliance": {
+    "title": "Compliance &",
+    "subtitle": "Regulatory reporting",
+    "desc": "Digitized reporting workflow precision-aligned with KLHK SIMPEL requirements.",
+    "alertBadge": "CRITICAL RED FLAG",
+    "alertMsg": "2 OVERDUE SUBMISSIONS",
+    "alertAction": "RESOLVE NOW",
+    "cards": {
+      "pending": "PENDING PREPARATION",
+      "submitted": "SUBMITTED (IN REVIEW)",
+      "approved": "APPROVED BY AGENCY",
+      "overdue": "OVERDUE DOCUMENTS",
+      "doc": "DOCUMENT",
+      "docs": "DOCUMENTS"
+    },
+    "charts": {
+      "vector": "OVERALL COMPLIANCE VECTOR",
+      "radar": "Radar Chart Viz",
+      "status": "SIMPEL SUBMISSION STATUS",
+      "link": "SIMPEL INTEGRATION LINK",
+      "api": "API CONNECTION",
+      "active": "ACTIVE",
+      "lastSync": "LAST SYNC"
+    }
+  },
+  "amdal": {
+    "title": "AMDAL",
+    "subtitle": "Management.",
+    "desc": "Comprehensive tracking for EIA, RKL, and RPL implementation parameters.",
+    "action": "ADD REQUIREMENT",
+    "cards": {
+      "params": "TRACKED PARAMETERS",
+      "paramsSub": "RKL & RPL",
+      "rate": "COMPLIANCE RATE",
+      "rateSub": "Zero Violations",
+      "tasks": "UPCOMING TASKS",
+      "tasksSub": "Due in < 30 Days",
+      "overdue": "OVERDUE ITEMS",
+      "overdueSub": "Clear Protocol"
+    },
+    "advisory": {
+      "title": "EIA ADVISORY",
+      "status": "OPERATIONAL COMPLIANT",
+      "desc": "All statutory RKL-RPL obligations for the current semester are verified and logged.",
+      "nextReport": "NEXT REPORT",
+      "validity": "VALIDITY",
+      "remaining": "DAYS REMAINING"
+    },
+    "agenda": {
+      "title": "Monitoring agenda"
+    }
+  },
+  "ghg": {
+    "title": "GHG",
+    "subtitle": "Accounting.",
+    "desc": "SRN PPI / SIGN SMART protocol carbon footprint tracking.",
+    "totalEmissions": "Total Emissions",
+    "trajectory": "CARBON TRAJECTORY",
+    "baseline": "Baseline",
+    "target": "Target",
+    "projection": "PROJECTION",
+    "reduction": {
+      "title": "REDUCTION STATUS",
+      "desc": "Currently tracking 12.5% below historical baseline. On target for Tier 1 Certification."
+    },
+    "heatmap": "365-DAY CARBON INTENSITY MATRIX"
+  },
+  "wastewater": {
+    "title": "Wastewater &",
+    "subtitle": "POPAL Mgmt.",
+    "desc": "Manage IPAL BMAL compliance, daily SPARING logs, and certified operators.",
+    "alertBadge": "REGULATORY ALERT",
+    "alertMsg": "NO ACTIVE POPAL OPERATOR",
+    "trends": "BMAL PARAMETER TRENDS",
+    "shiftStart": "START OF SHIFT",
+    "shiftEnd": "END OF SHIFT",
+    "telemetry": "REAL-TIME TELEMETRY STREAM",
+    "complianceScore": "Compliance Score",
+    "telemetryDesc": "Integrated SPARING telemetry verification confirms high boundary limit adherence.",
+    "sparingStatus": "SPARING Status",
+    "klhkSync": "Last KLHK Sync",
+    "matrix": "365-day sparing compliance matrix"
+  },
+  "waste": {
+    "title": "B3 Waste",
+    "subtitle": "Management.",
+    "desc": "End-to-end hazardous waste manifest lifecycle & Festronik integration.",
+    "action": "NEW MANIFEST",
+    "category": {
+      "title": "WASTE CATEGORY SPLIT",
+      "clearance": "CLEARANCE RATE",
+      "optimal": "OPTIMAL"
+    },
+    "generation": "GENERATION vs HANDOVER",
+    "genLabel": "GENERATION",
+    "handoverLabel": "HANDOVER",
+    "cycles": "LAST 24 CYCLES",
+    "timeline": "STORAGE TIMELINE MATRIX",
+    "table": {
+      "origin": "WASTE STREAM ORIGIN",
+      "cat1": "CATEGORY 1",
+      "cat2": "CATEGORY 2"
+    }
+  },
+  "iso": {
+    "cards": {
+      "readiness": "Audit Readiness",
+      "aspects": "Significant Aspects",
+      "aspectsSub": "Critical Impacts Identified",
+      "legal": "Legal Compliance",
+      "legalSub": "Obligations Verified",
+      "nc": "Non-Conformities",
+      "ncSub": "Zero Pending CAPAs"
+    },
+    "matrix": "Aspect Significance Matrix",
+    "probability": "Probability × Severity",
+    "activeRisks": "ACTIVE RISKS",
+    "capa": {
+      "title": "CAPA Lifecycle Analytics",
+      "rootCause": "Root Cause Identified",
+      "remediation": "Active Remediation",
+      "technical": "Technical Verification"
+    },
+    "vigilance": "Regulatory Vigilance Stream",
+    "liveStream": "Live Stream"
+  },
+  "domestic": {
+    "title": "Domestic",
+    "subtitle": "Waste.",
+    "desc": "Circular economy tracking & Non-B3 waste processing metrics.",
+    "recyclingRate": "RECYCLING RATE",
+    "categories": {
+      "organic": "ORGANIC WASTE",
+      "organicSub": "Compostable Material",
+      "plastic": "PLASTICS / PET",
+      "plasticSub": "Recyclable Stream",
+      "paper": "PAPER / CARTON",
+      "paperSub": "Processing Hub",
+      "residue": "RESIDUE",
+      "residueSub": "Final Disposal"
+    },
+    "efficiency": "SEGREGATION EFFICIENCY TIMELINE",
+    "target": "Target",
+    "actual": "Actual",
+    "day": "DAY",
+    "cycle": "DAILY MONITORING CYCLE"
+  },
+  "proper": {
+    "maturityTracker": "Performance Maturity Tracker",
+    "title": "Indonesian Ministry",
+    "subtitle": "PROPER 2026.",
+    "maturityScore": "Maturity Score",
+    "status": {
+      "startup": "STARTUP",
+      "blue": "BLUE (TAAT)",
+      "green": "GREEN",
+      "gold": "GOLD STATUS"
+    },
+    "aiInsight": "AI Predictive Insight",
+    "aiStrategy": "Strategy Book",
+    "vaultTitle": "Regulatory Compliance Vault (Taat)",
+    "vaultValidated": "VALIDATED v2.4",
+    "vaultItems": {
+      "ipal": "IPAL POPAL MONITORING",
+      "ipalSub": "Mandatory Blue Requirement",
+      "air": "SIMPEL AIR EMISSION",
+      "airSub": "Technical Data Integrity",
+      "b3": "FESTRONIK B3 MANIFEST",
+      "b3Sub": "End-to-end Traceability"
+    },
+    "compliant": "COMPLIANT",
+    "trendTitle": "Compliance Trend",
+    "months": "12 Months"
+  },
+  "intelligence": {
+    "badge": "Performance Indexing Engine",
+    "title": "Advanced",
+    "subtitle": "ESG Intelligence.",
+    "path": "Path: Net Zero 2050",
+    "indexStatus": "Index Status",
+    "levels": {
+      "standard": "Standard Path",
+      "maturity": "Maturity Curve",
+      "master": "Master Level"
+    },
+    "mastery": "Mastery Completion",
+    "initMatrix": "Initialize Matrix",
+    "engine": "Context Engine",
+    "active": "Active Processing",
+    "verifyLink": "Verify Neural Link",
+    "placeholder1": "System Override Target...",
+    "placeholder2": "Global Variable Sync..."
+  },
+  "legal": {
+    "cards": {
+      "total": "Total Regulations",
+      "avg": "Implementation Avg",
+      "reviews": "Upcoming Reviews",
+      "acts": "Supreme Acts"
+    },
+    "vaultTitle": "Enterprise Regulatory Vault",
+    "vaultSub": "Live Intelligence for Industrial Compliance",
+    "search": "Search law or clause...",
+    "export": "EXPORT COMPLIANCE LEDGER",
+    "status": "STATUS"
+  },
+  "security": {
+    "stats": {
+      "rls": "RLS Matrix",
+      "rlsDesc": "Global enforcement of Row-Level Security across all 12 edge nodes.",
+      "hub": "Operator Hub",
+      "hubDesc": "Real-time personnel monitoring and multi-factor session validation.",
+      "uptime": "99.9% Uptime",
+      "uptimeDesc": "Tier-4 infrastructure integrity with zero-downtime ledger failover.",
+      "quantum": "Quantum-Safe",
+      "quantumDesc": "TLS 1.3 hybrid encryption for all telemetry and document streams."
+    },
+    "title": "Advanced",
+    "subtitle": "Audit Ledger",
+    "badge": "Precision Non-Repudiation Architecture",
+    "nominal": "SYSTEMS NOMINAL",
+    "latency": "12MS LATENCY",
+    "table": {
+      "time": "Event Horizon",
+      "protocol": "Audit Protocol",
+      "context": "Entity Context",
+      "actor": "Principal Actor",
+      "integrity": "Integrity"
+    },
+    "statusValid": "SHA-256 VALID"
+  },
+  "modules": {
+    "integratedBadge": "INTEGRATED ECOSYSTEM",
+    "title": "Module",
+    "subtitle": "Theater.",
+    "amdal": {
+      "titleShort": "AMDAL Mgmt",
+      "badge": "SYSTEM COMPONENT",
+      "title": "AMDAL",
+      "subtitle": "Management",
+      "desc": "EIA monitoring framework",
+      "descLong": "Comprehensive AMDAL lifecycle management. Real-time RKL-RPL status monitoring with automated semester reporting cycles and regulatory advisory engine.",
+      "details": ["AMDAL Advisory", "RKL-RPL Cycle", "Approval Logic"]
+    },
+    "wastewater": {
+      "titleShort": "Wastewater",
+      "badge": "MISSION CRITICAL",
+      "title": "Discharge",
+      "subtitle": "PP 22/2021 Precision",
+      "desc": "IPAL & SPARING telemetry",
+      "descLong": "Mission-critical wastewater monitoring integrated with SPARING hardware. Real-time telemetry for pH, COD, and TSS thresholds with automated violation prevention and daily logging.",
+      "details": ["Hardware Sync", "Limit Guards", "BMAL Audit", "Action Tracker"]
+    },
+    "ghg": {
+      "titleShort": "GHG",
+      "badge": "CARBON ACCOUNTING",
+      "title": "GHG",
+      "subtitle": "Accounting",
+      "desc": "Carbon footprint accounting",
+      "descLong": "Greenhouse Gas inventory and carbon footprint tracking based on Scope 1, 2, and 3. Fully compliant with SIGN SMART and SRN PPI reporting frameworks for global transparency.",
+      "details": ["Scope Breakdown", "SRN PPI Limit", "Emission Heatmap", "Net Zero Path"]
+    },
+    "waste": {
+      "titleShort": "B3 Waste",
+      "badge": "DIGITAL ECOSYSTEM",
+      "title": "B3 Waste",
+      "subtitle": "Management",
+      "desc": "Festronik lifecycle mgmt",
+      "descLong": "End-to-end hazardous waste manifest lifecycle. Seamless Festronik integration ensuring 100% accountability from generation to final disposal with 90/180-day storage alerts.",
+      "details": ["Festronik Sync", "Storage Guard", "B3 Waste Ledger", "Manifest Tracker"]
+    },
+    "iso": {
+      "titleShort": "ISO 14001",
+      "badge": "EMS CORE",
+      "title": "ISO 14001",
+      "subtitle": "Digital EMS Core",
+      "desc": "EMS lifecycle analytics",
+      "descLong": "Digitized ISO 14001:2015 Management System. Full lifecycle mapping for Clause 6.1 (Aspects/Impacts), Clause 9.1 (Monitoring), and Clause 10.2 (CAPA engine).",
+      "details": ["Clause 6.1 Matrix", "Clause 10.2 CAPA", "Audit Readiness", "Digital Legality"]
+    },
+    "proper": {
+      "titleShort": "PROPER",
+      "badge": "REGULATORY INTEL",
+      "title": "PROPER",
+      "subtitle": "Predictive Scaling",
+      "desc": "Ministry rating trajectory",
+      "descLong": "Forecast Indonesian MOE PROPER ratings with AI-driven gap analysis. Drive your organization from compliance toward Green and Gold ratings with beyond-compliance tracking.",
+      "details": ["SROI Community Log", "Gap Analysis AI", "Rating Probability", "Criteria Mapping"]
+    },
+    "compliance": {
+      "titleShort": "Compliance",
+      "badge": "REGULATORY TRACKING",
+      "title": "Compliance",
+      "subtitle": "Engine",
+      "desc": "Regulatory tracking engine",
+      "descLong": "Automated compliance tracking system aligning regulatory obligations with operational implementation status.",
+      "details": ["Compliance Vector", "Data Integrity", "SIMPEL Status", "Review Cycles"]
+    },
+    "domestic": {
+      "titleShort": "Domestic",
+      "badge": "CIRCULAR ECONOMY",
+      "title": "Domestic",
+      "subtitle": "Waste",
+      "desc": "Non-B3 circular metrics",
+      "descLong": "Circular economy tracking & Non-B3 waste processing metrics for material reuse efficiency.",
+      "details": ["Recycling Rate", "Stream Split", "Segregation Log", "Efficiency Metrics"]
+    },
+    "intelligence": {
+      "titleShort": "Intelligence",
+      "badge": "ESG INTEL",
+      "title": "ESG",
+      "subtitle": "Predictive Modeling",
+      "desc": "ESG predictive modeling",
+      "descLong": "Sophisticated ESG intelligence engine analyzing disclosure metrics against global standards (GRI, SASB, TCFD).",
+      "details": ["Net Zero Path", "Maturity Curve", "AI Benchmarking", "Strategic Roadmap"]
+    },
+    "legal": {
+      "titleShort": "Legal",
+      "badge": "REGULATORY VAULT",
+      "title": "Statutory",
+      "subtitle": "Regulatory Vault",
+      "desc": "Statutory regulatory vault",
+      "descLong": "Interactive regulatory vaults and compliance implementation tracking ensuring zero regulatory breaches.",
+      "details": ["Regulation Vault", "Mandate Tracker", "Implementation Gap", "AI Legal Basis"]
+    },
+    "security": {
+      "titleShort": "Security",
+      "badge": "AUDIT LEDGER",
+      "title": "Immutable",
+      "subtitle": "Audit Ledger",
+      "desc": "Immutable audit ledger",
+      "descLong": "Military-grade non-repudiation audit logging. Advanced Role-Based Access Control ensuring the highest data integrity.",
+      "details": ["Multi-MFA", "Audit Trail", "Data Integrity", "Tenant Isolation"]
+    },
+    "dashboard": {
+      "titleShort": "Dashboard",
+      "badge": "COMMAND CENTER",
+      "title": "Command",
+      "subtitle": "Center",
+      "desc": "Enterprise performance index",
+      "descLong": "Unified ESG intelligence hub. Synthesizing real-time telemetry into a single definitive health score for GLOBAL OPERATIONS.",
+      "details": ["Impact Score", "Real-time Feed", "Global Sync"]
+    },
+    "esg": {
+      "titleShort": "ESG",
+      "badge": "ESG INTEL",
+      "title": "ESG",
+      "subtitle": "Predictive Modeling",
+      "desc": "ESG predictive modeling",
+      "descLong": "Sophisticated ESG intelligence engine analyzing disclosure metrics against global standards (GRI, SASB, TCFD).",
+      "details": ["Net Zero Path", "Maturity Curve", "AI Benchmarking"]
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "months": ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"],
+    "monthsShort": ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+    "daysShort": ["S", "M", "T", "W", "T", "F", "S"]
+  },
+  "cta": {
+    "title": "THE NEXT",
+    "subtitle": "STANDARD.",
+    "desc": "Transition from legacy environmental logging to a high-performance, predictive operating system.",
+    "button": "Enter The Ecosystem"
+  },
+  "footer": {
+    "tagline": "Precision-Engineered Compliance",
+    "allSystemsNominal": "All Systems Nominal",
+    "copyright": "© 2026 ADEBASIR ENTERPRISE"
+  }
+}
