@@ -305,7 +305,7 @@ function GHGAccountingDashboard() {
           <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-widest text-slate-400 border-t border-slate-100 pt-6 italic">
             <span>{t('common.monthsShort.0')} 2026 {t('ghg.baseline')}</span>
             <div className="flex gap-6">
-              <div className="flex items-center gap-2.5"><div className="w-2.5 h-2.5 rounded-full bg-emerald-500"></div><span>SCOPE 1+2</span></div>
+              <div className="flex items-center gap-2.5"><div className="w-2.5 h-2.5 rounded-full bg-emerald-500"></div><span>{t('ghg.scope1').toUpperCase()} + {t('ghg.scope2').toUpperCase()}</span></div>
               <div className="flex items-center gap-2.5"><div className="w-2.5 h-2.5 rounded-full bg-slate-200"></div><span>{t('ghg.projection')}</span></div>
             </div>
             <span>{t('common.monthsShort.11')} 2026 {t('ghg.target')}</span>
@@ -324,11 +324,11 @@ function GHGAccountingDashboard() {
             </div>
             <div className="pt-8 border-t border-white/5 grid grid-cols-2 gap-6">
               <div>
-                <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1 italic">Scope 1</div>
+                <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1 italic">{t('ghg.scope1')}</div>
                 <div className="text-lg font-black italic">8.2K <span className="text-[10px] not-italic text-slate-600">t</span></div>
               </div>
               <div>
-                <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1 italic">Scope 2</div>
+                <div className="text-[9px] font-black text-slate-500 uppercase tracking-widest mb-1 italic">{t('ghg.scope2')}</div>
                 <div className="text-lg font-black italic">4.25K <span className="text-[10px] not-italic text-slate-600">t</span></div>
               </div>
             </div>
@@ -414,7 +414,7 @@ function WastewaterDashboard() {
               </div>
               <div className="flex justify-between items-center text-[9px] font-black uppercase tracking-widest italic">
                 <span className="text-slate-500">{t('wastewater.klhkSync')}</span>
-                <span className="text-white">12 SEC {t('security.audit.ago.mins')}</span>
+                <span className="text-white">12 {t('security.audit.ago.sec')} {t('security.audit.ago.mins')}</span>
               </div>
             </div>
           </div>
@@ -932,10 +932,10 @@ function ESGIntelligenceDashboard() {
 function LegalRegisterDashboard() {
   const { t } = useLanguage();
   const laws = [
-    { no: '01', type: 'ACT', sub: 'General Environment', title: 'Undang-Undang No. 32 Tahun 2009', desc: 'UU Perlindungan dan Pengelolaan Lingkungan Hidup (PPLH)', compliance: 'FULL' },
-    { no: '02', type: 'ACT', sub: 'Carbon Economy', title: 'Undang-Undang No. 6 Tahun 2023', desc: 'Penetapan Perppu No. 2 Tahun 2022 tentang Cipta Kerja', compliance: 'FULL' },
-    { no: '03', type: 'GOVT REG', sub: 'Wastewater BMAL', title: 'Peraturan Pemerintah No. 22 Tahun 2021', desc: 'Penyelenggaraan Perlindungan dan Pengelolaan Lingkungan Hidup', compliance: 'FULL' },
-    { no: '04', type: 'MINISTRY', sub: 'Hazardous Waste', title: 'Permen LHK No. 6 Tahun 2021', desc: 'Tata Cara dan Persyaratan Pengelolaan Limbah B3', compliance: 'REVIEW' }
+    { no: '01', type: 'ACT', sub: t('legal.laws.law1.sub'), title: t('legal.laws.law1.title'), desc: t('legal.laws.law1.desc'), compliance: 'FULL' },
+    { no: '02', type: 'ACT', sub: t('legal.laws.law2.sub'), title: t('legal.laws.law2.title'), desc: t('legal.laws.law2.desc'), compliance: 'FULL' },
+    { no: '03', type: 'GOVT REG', sub: t('legal.laws.law3.sub'), title: t('legal.laws.law3.title'), desc: t('legal.laws.law3.desc'), compliance: 'FULL' },
+    { no: '04', type: 'MINISTRY', sub: t('legal.laws.law4.sub'), title: t('legal.laws.law4.title'), desc: t('legal.laws.law4.desc'), compliance: 'REVIEW' }
   ];
 
   return (
@@ -991,7 +991,7 @@ function LegalRegisterDashboard() {
               <div className="flex items-center gap-10 shrink-0">
                 <div className={`px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] italic border
                   ${l.compliance === 'FULL' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' : 'bg-orange-500/10 text-orange-400 border-orange-500/20'}`}>
-                  {l.compliance} {t('legal.status')}
+                  {l.compliance === 'FULL' ? t('proper.compliant') : t('iso.cards.nc')} {t('legal.status')}
                 </div>
                 <button className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 hover:bg-emerald-500 group/btn transition-all shadow-2xl">
                   <ArrowRight className="w-6 h-6 text-white/20 group-hover/btn:text-white transition-colors" />
@@ -1066,10 +1066,10 @@ function SecurityDashboard() {
             </thead>
             <tbody className="divide-y divide-white/5">
               {[
-                { time: '12:58:24.012', action: 'CREATE_RECORD', entity: 'AMDAL_PARA_02', user: 'ADMIN_BASIR', details: 'HASH:f81d...4fae' },
-                { time: '12:56:11.884', action: 'AUTH_SUCCESS', entity: 'USER_LOGIN_X', user: 'PIC_ENVIRONMENT', details: 'SECURE_CHANNEL' },
+                { time: '12:58:24.012', action: 'CREATE_RECORD', entity: 'AMDAL_PARA_02', user: 'ADMIN_BASIR', details: `${t('security.audit.details.hash')}:f81d...4fae` },
+                { time: '12:56:11.884', action: 'AUTH_SUCCESS', entity: 'USER_LOGIN_X', user: 'PIC_ENVIRONMENT', details: t('security.audit.details.secureChannel') },
                 { time: '12:54:02.331', action: 'UPDATE_BMAL', entity: 'IPAL_STREAM_A', user: 'SYSTEM_DAEMON', details: 'PARAM_PH:7.2' },
-                { time: '12:52:19.904', action: 'FILE_COMMIT', entity: 'SIMPEL_Q4_RKL', user: 'ADMIN_BASIR', details: 'VERSION:v2.4' }
+                { time: '12:52:19.904', action: 'FILE_COMMIT', entity: 'SIMPEL_Q4_RKL', user: 'ADMIN_BASIR', details: `${t('security.audit.details.version')}:v2.4` }
               ].map((row, i) => (
                 <tr key={i} className="group hover:translate-x-1 sm:hover:translate-x-2 transition-all duration-500">
                   <td className="py-6 sm:py-10 px-4 sm:px-12 bg-white/2 rounded-l-2xl sm:rounded-l-[2.5rem] text-xs sm:text-sm font-mono text-white/40 tracking-wider sm:tracking-widest uppercase whitespace-nowrap">{row.time}</td>
@@ -1500,8 +1500,12 @@ export default function LandingPage() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-32 items-center">
             <div className="reveal-on-scroll">
-              <h2 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter text-white leading-none">God-Tier <br /> <span className="text-emerald-500">Golden Stack.</span></h2>
-              <p className="text-2xl text-slate-400 font-light mb-12 leading-relaxed">Built for elite scalability and 100% data integrity. Our infrastructure eliminates traditional client-side bottlenecks.</p>
+              <h2 className="text-6xl md:text-8xl font-black italic uppercase tracking-tighter text-white leading-none">
+                {t('infrastructure.title')} <br /> <span className="text-emerald-500">{t('infrastructure.subtitle')}</span>
+              </h2>
+              <p className="text-2xl text-slate-400 font-light mb-12 leading-relaxed">
+                {t('infrastructure.desc')}
+              </p>
 
               <div className="space-y-6">
                 <div className="p-8 rounded-3xl bg-white/2 border border-white/5 flex gap-8 items-center hover:border-emerald-500/50 transition-all">
@@ -1509,8 +1513,8 @@ export default function LandingPage() {
                     <Layers className="w-8 h-8" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-white mb-2">React Server Components</h4>
-                    <p className="text-sm text-slate-500">Zero client-side JS for the initial load, providing instantaneous performance.</p>
+                    <h4 className="text-xl font-bold text-white mb-2">{t('infrastructure.cards.rsc.title')}</h4>
+                    <p className="text-sm text-slate-500">{t('infrastructure.cards.rsc.desc')}</p>
                   </div>
                 </div>
                 <div className="p-8 rounded-3xl bg-white/2 border border-white/5 flex gap-8 items-center hover:border-blue-500/50 transition-all">
@@ -1518,8 +1522,8 @@ export default function LandingPage() {
                     <Database className="w-8 h-8" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-white mb-2">Drizzle & Turso Edge</h4>
-                    <p className="text-sm text-slate-500">Globally distributed database with strict type-safe schemas at every level.</p>
+                    <h4 className="text-xl font-bold text-white mb-2">{t('infrastructure.cards.edge.title')}</h4>
+                    <p className="text-sm text-slate-500">{t('infrastructure.cards.edge.desc')}</p>
                   </div>
                 </div>
               </div>
@@ -1539,8 +1543,13 @@ export default function LandingPage() {
 });`}
                 </pre>
                 <div className="mt-8 flex flex-wrap gap-3">
-                  {["Postgres Native", "Type-Safe", "RLS Protocols", "Edge Ready"].map(tag => (
-                    <span key={tag} className="tech-tag">{tag}</span>
+                  {[
+                    { label: t('common.tags.regtech'), tag: "Postgres Native" },
+                    { label: t('common.tags.automation'), tag: "Type-Safe" },
+                    { label: t('common.tags.realtime'), tag: "RLS Protocols" },
+                    { label: t('common.tags.esg'), tag: "Edge Ready" }
+                  ].map(item => (
+                    <span key={item.tag} className="tech-tag">{item.label}</span>
                   ))}
                 </div>
               </div>

@@ -48,6 +48,12 @@
     "iotTelemetry": {
       "title": "Telemetri IoT",
       "desc": "Integrasi SPARING/KLHK langsung untuk sensor air dan udara."
+    },
+    "header": {
+      "badge": "Array Kapabilitas",
+      "title": "Kecerdasan",
+      "subtitle": "Produk.",
+      "desc": "Lebih dari sekadar pencatatan sederhana. Orkestrasi canggih kepatuhan lingkungan dan pelaporan otomatis."
     }
   },
   "hero": {
@@ -143,7 +149,10 @@
       "title": "STATUS REDUKSI",
       "desc": "Saat ini berada 12,5% di bawah garis dasar historis. Sesuai target untuk Sertifikasi Tier 1."
     },
-    "heatmap": "MATRIKS INTENSITAS KARBON 365 HARI"
+    "heatmap": "MATRIKS INTENSITAS KARBON 365 HARI",
+    "compliance": "Kepatuhan SRN PPI",
+    "scope1": "Scope 1",
+    "scope2": "Scope 2"
   },
   "wastewater": {
     "title": "Air Limbah &",
@@ -179,7 +188,16 @@
     "table": {
       "origin": "ASAL ALIRAN LIMBAH",
       "cat1": "KATEGORI 1",
-      "cat2": "KATEGORI 2"
+      "cat2": "KATEGORI 2",
+      "tps": "TPS"
+    },
+    "neraca": {
+      "oilySludge": "Oily Sludge",
+      "contaminatedSoil": "Tanah Terkontaminasi",
+      "usedChemicals": "Bahan Kimia Bekas",
+      "medicalWaste": "Limbah Medis",
+      "category1": "KAT 1",
+      "category2": "KAT 2"
     }
   },
   "iso": {
@@ -195,14 +213,23 @@
     "matrix": "Matriks Signifikansi Aspek",
     "probability": "Probabilitas × Keparahan",
     "activeRisks": "RISIKO AKTIF",
+    "vigilance": "Aliran Kewaspadaan Regulasi",
+    "liveStream": "Aliran Langsung",
+    "aspectMatrix": {
+      "title": "MATRIKS SIGNIFIKANSI ASPEK",
+      "high": "TINGGI",
+      "medium": "SEDANG",
+      "low": "RENDAH",
+      "probSeverity": "Probabilitas × Keparahan",
+      "activeRisks": "RISIKO AKTIF"
+    },
     "capa": {
       "title": "Analitik Siklus Hidup CAPA",
       "rootCause": "Akar Penyebab Teridentifikasi",
       "remediation": "Remediasi Aktif",
-      "technical": "Verifikasi Teknis"
-    },
-    "vigilance": "Aliran Kewaspadaan Regulasi",
-    "liveStream": "Aliran Langsung"
+      "technical": "Verifikasi Teknis",
+      "active": "AKTIF"
+    }
   },
   "domestic": {
     "title": "Limbah",
@@ -223,7 +250,14 @@
     "target": "Target",
     "actual": "Aktual",
     "day": "HARI",
-    "cycle": "SIKLUS PEMANTAUAN HARIAN"
+    "cycle": "SIKLUS PEMANTAUAN HARIAN",
+    "segregation": {
+      "title": "TIMELINE EFISIENSI SEGREGASI",
+      "target": "Target",
+      "actual": "Aktual",
+      "day": "HARI",
+      "cycle": "SIKLUS PEMANTAUAN"
+    }
   },
   "proper": {
     "maturityTracker": "Pelacak Kematangan Performa",
@@ -250,7 +284,9 @@
     },
     "compliant": "PATUH",
     "trendTitle": "Tren Kepatuhan",
-    "months": "12 Bulan"
+    "months": "12 Bulan",
+    "trendStatus": "STATUS TREN",
+    "strategyBook": "Buku Strategi"
   },
   "intelligence": {
     "badge": "Mesin Indeks Performa",
@@ -282,7 +318,29 @@
     "vaultSub": "Intelijen Langsung untuk Kepatuhan Industri",
     "search": "Cari hukum atau pasal...",
     "export": "EKSPOR BUKU BESAR KEPATUHAN",
-    "status": "STATUS"
+    "status": "STATUS",
+    "laws": {
+      "law1": {
+        "sub": "Lingkungan Umum",
+        "title": "Undang-Undang No. 32 Tahun 2009",
+        "desc": "UU Perlindungan dan Pengelolaan Lingkungan Hidup (PPLH)"
+      },
+      "law2": {
+        "sub": "Ekonomi Karbon",
+        "title": "Undang-Undang No. 6 Tahun 2023",
+        "desc": "Penetapan Perppu No. 2 Tahun 2022 tentang Cipta Kerja"
+      },
+      "law3": {
+        "sub": "Air Limbah BMAL",
+        "title": "Peraturan Pemerintah No. 22 Tahun 2021",
+        "desc": "Penyelenggaraan Perlindungan dan Pengelolaan Lingkungan Hidup"
+      },
+      "law4": {
+        "sub": "Limbah B3",
+        "title": "Permen LHK No. 6 Tahun 2021",
+        "desc": "Tata Cara dan Persyaratan Pengelolaan Limbah B3"
+      }
+    }
   },
   "security": {
     "stats": {
@@ -294,6 +352,17 @@
       "uptimeDesc": "Integritas infrastruktur Tier-4 dengan failover buku besar tanpa downtime.",
       "quantum": "Quantum-Safe",
       "quantumDesc": "Enkripsi hibrida TLS 1.3 untuk semua telemetri dan aliran dokumen."
+    },
+    "audit": {
+      "ago": {
+        "mins": "YANG LALU",
+        "sec": "DETIK"
+      },
+      "details": {
+        "secureChannel": "SALURAN AMAN",
+        "version": "VERSI",
+        "hash": "HASH"
+      }
     },
     "title": "Tingkat Lanjut",
     "subtitle": "Buku Besar Audit",
@@ -459,7 +528,32 @@
     "cancel": "Batal",
     "months": ["JANUARI", "FEBRUARI", "MARET", "APRIL", "MEI", "JUNI", "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"],
     "monthsShort": ["JAN", "FEB", "MAR", "APR", "MEI", "JUN", "JUL", "AGU", "SEP", "OKT", "NOV", "DES"],
-    "daysShort": ["S", "S", "R", "K", "J", "S", "M"]
+    "daysShort": ["S", "S", "R", "K", "J", "S", "M"],
+    "tags": {
+      "regtech": "RegTech",
+      "automation": "Otomasi",
+      "planning": "Perencanaan",
+      "standards": "Standar",
+      "logistics": "Logistik",
+      "esg": "ESG",
+      "carbon": "Karbon",
+      "realtime": "Real-time"
+    }
+  },
+  "infrastructure": {
+    "title": "God-Tier",
+    "subtitle": "Golden Stack.",
+    "desc": "Dibangun untuk skalabilitas elit dan integritas data 100%. Infrastruktur kami menghilangkan hambatan sisi klien tradisional.",
+    "cards": {
+      "rsc": {
+        "title": "React Server Components",
+        "desc": "Nol JS sisi klien untuk pemuatan awal, memberikan performa instan."
+      },
+      "edge": {
+        "title": "Drizzle & Turso Edge",
+        "desc": "Database terdistribusi global dengan skema aman-tipe yang ketat di setiap level."
+      }
+    }
   },
   "cta": {
     "title": "STANDAR",

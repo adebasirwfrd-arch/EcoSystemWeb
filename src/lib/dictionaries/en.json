@@ -47,7 +47,13 @@
     },
     "iotTelemetry": {
       "title": "IoT Telemetry",
-      "desc": "Direct SPARING/KLHK integration for water and air sensors."
+      "desc": "Direct SPARING/KLHK integration for air and water sensors."
+    },
+    "header": {
+      "badge": "Capabilities Array",
+      "title": "Product",
+      "subtitle": "Intelligence.",
+      "desc": "Beyond simple log-keeping. A sophisticated orchestration of environmental compliance and automated reporting."
     }
   },
   "hero": {
@@ -76,7 +82,17 @@
     "subtitle": "Enterprise Performance",
     "healthTitle": "Impact Score",
     "realtime": "Real-time Feed",
-    "globalSync": "Global Sync"
+    "globalSync": "Global Sync",
+    "sub": {
+      "ghg": "GHG Accounting",
+      "waste": "B3 Waste",
+      "wastewater": "Wastewater",
+      "iso": "ISO 14001",
+      "proper": "PROPER",
+      "amdal": "AMDAL",
+      "compliance": "Compliance",
+      "domestic": "Domestic Waste"
+    }
   },
   "compliance": {
     "title": "Compliance &",
@@ -143,7 +159,10 @@
       "title": "REDUCTION STATUS",
       "desc": "Currently tracking 12.5% below historical baseline. On target for Tier 1 Certification."
     },
-    "heatmap": "365-DAY CARBON INTENSITY MATRIX"
+    "heatmap": "365-DAY CARBON INTENSITY MATRIX",
+    "compliance": "SRN PPI Compliance",
+    "scope1": "Scope 1",
+    "scope2": "Scope 2"
   },
   "wastewater": {
     "title": "Wastewater &",
@@ -179,7 +198,16 @@
     "table": {
       "origin": "WASTE STREAM ORIGIN",
       "cat1": "CATEGORY 1",
-      "cat2": "CATEGORY 2"
+      "cat2": "CATEGORY 2",
+      "tps": "TPS"
+    },
+    "neraca": {
+      "oilySludge": "Oily Sludge",
+      "contaminatedSoil": "Contaminated Soil",
+      "usedChemicals": "Used Chemicals",
+      "medicalWaste": "Medical Waste",
+      "category1": "CAT 1",
+      "category2": "CAT 2"
     }
   },
   "iso": {
@@ -190,19 +218,28 @@
       "legal": "Legal Compliance",
       "legalSub": "Obligations Verified",
       "nc": "Non-Conformities",
-      "ncSub": "Zero Pending CAPAs"
+      "ncSub": "Zero Pending CAPas"
     },
     "matrix": "Aspect Significance Matrix",
     "probability": "Probability × Severity",
     "activeRisks": "ACTIVE RISKS",
+    "vigilance": "Regulatory Vigilance Stream",
+    "liveStream": "Live Stream",
+    "aspectMatrix": {
+      "title": "ASPECT SIGNIFICANCE MATRIX",
+      "high": "HIGH",
+      "medium": "MEDIUM",
+      "low": "LOW",
+      "probSeverity": "Probability × Severity",
+      "activeRisks": "ACTIVE RISKS"
+    },
     "capa": {
       "title": "CAPA Lifecycle Analytics",
-      "rootCause": "Root Cause Identified",
+      "rootCause": "Root Causes Identified",
       "remediation": "Active Remediation",
-      "technical": "Technical Verification"
-    },
-    "vigilance": "Regulatory Vigilance Stream",
-    "liveStream": "Live Stream"
+      "technical": "Technical Verification",
+      "active": "ACTIVE"
+    }
   },
   "domestic": {
     "title": "Domestic",
@@ -223,7 +260,14 @@
     "target": "Target",
     "actual": "Actual",
     "day": "DAY",
-    "cycle": "DAILY MONITORING CYCLE"
+    "cycle": "DAILY MONITORING CYCLE",
+    "segregation": {
+      "title": "SEGREGATION EFFICIENCY TIMELINE",
+      "target": "Target",
+      "actual": "Actual",
+      "day": "DAY",
+      "cycle": "MONITORING CYCLE"
+    }
   },
   "proper": {
     "maturityTracker": "Performance Maturity Tracker",
@@ -250,7 +294,9 @@
     },
     "compliant": "COMPLIANT",
     "trendTitle": "Compliance Trend",
-    "months": "12 Months"
+    "months": "12 Months",
+    "trendStatus": "TREND STATUS",
+    "strategyBook": "Strategy Book"
   },
   "intelligence": {
     "badge": "Performance Indexing Engine",
@@ -282,7 +328,29 @@
     "vaultSub": "Live Intelligence for Industrial Compliance",
     "search": "Search law or clause...",
     "export": "EXPORT COMPLIANCE LEDGER",
-    "status": "STATUS"
+    "status": "STATUS",
+    "laws": {
+      "law1": {
+        "sub": "General Environment",
+        "title": "Undang-Undang No. 32 Tahun 2009",
+        "desc": "UU Perlindungan dan Pengelolaan Lingkungan Hidup (PPLH)"
+      },
+      "law2": {
+        "sub": "Carbon Economy",
+        "title": "Undang-Undang No. 6 Tahun 2023",
+        "desc": "Penetapan Perppu No. 2 Tahun 2022 tentang Cipta Kerja"
+      },
+      "law3": {
+        "sub": "Wastewater BMAL",
+        "title": "Peraturan Pemerintah No. 22 Tahun 2021",
+        "desc": "Penyelenggaraan Perlindungan dan Pengelolaan Lingkungan Hidup"
+      },
+      "law4": {
+        "sub": "Hazardous Waste",
+        "title": "Permen LHK No. 6 Tahun 2021",
+        "desc": "Tata Cara dan Persyaratan Pengelolaan Limbah B3"
+      }
+    }
   },
   "security": {
     "stats": {
@@ -293,7 +361,18 @@
       "uptime": "99.9% Uptime",
       "uptimeDesc": "Tier-4 infrastructure integrity with zero-downtime ledger failover.",
       "quantum": "Quantum-Safe",
-      "quantumDesc": "TLS 1.3 hybrid encryption for all telemetry and document streams."
+      "quantumDesc": "TLS 1.3 Hybrid encryption for all telemetry and document streams."
+    },
+    "audit": {
+      "ago": {
+        "mins": "AGO",
+        "sec": "SEC"
+      },
+      "details": {
+        "secureChannel": "SECURE CHANNEL",
+        "version": "VERSION",
+        "hash": "HASH"
+      }
     },
     "title": "Advanced",
     "subtitle": "Audit Ledger",
@@ -459,7 +538,32 @@
     "cancel": "Cancel",
     "months": ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"],
     "monthsShort": ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
-    "daysShort": ["S", "M", "T", "W", "T", "F", "S"]
+    "daysShort": ["S", "M", "T", "W", "T", "F", "S"],
+    "tags": {
+      "regtech": "RegTech",
+      "automation": "Automation",
+      "planning": "Planning",
+      "standards": "Standards",
+      "logistics": "Logistics",
+      "esg": "ESG",
+      "carbon": "Carbon",
+      "realtime": "Real-time"
+    }
+  },
+  "infrastructure": {
+    "title": "God-Tier",
+    "subtitle": "Golden Stack.",
+    "desc": "Built for elite scalability and 100% data integrity. Our infrastructure eliminates traditional client-side bottlenecks.",
+    "cards": {
+      "rsc": {
+        "title": "React Server Components",
+        "desc": "Zero client-side JS for the initial load, providing instantaneous performance."
+      },
+      "edge": {
+        "title": "Drizzle & Turso Edge",
+        "desc": "Globally distributed database with strict type-safe schemas at every level."
+      }
+    }
   },
   "cta": {
     "title": "THE NEXT",
